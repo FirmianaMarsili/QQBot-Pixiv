@@ -27,26 +27,19 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             
             if (Login.instance == null)
             {
-                //GroupMessageReceivedMahuaEvent._mahuaApi.SendPrivateMessage(context.FromQq).Text("未登陆").Done();
                 return;
             }
             CancellationTokenSource CancelTokenSource = new CancellationTokenSource();
             JObject jd = null;
             try
             {
-               //mahuaApi.SendPrivateMessage(context.FromQq).Text("开始获取缩略").Done();
                 jd = await Login.instance.pixivAPI.rankingAsync("all", mode, page, per_page, 
-                    null, CancelTokenSource
-                    /*GroupMessageReceivedMahuaEvent._mahuaApi, context*/);
+                    null, CancelTokenSource);
             }
             catch (Exception ex)
             {
-                //GroupMessageReceivedMahuaEvent._mahuaApi.SendPrivateMessage(context.FromQq).Text(ex.ToString()).Done();
                 throw;
             }
-            //GroupMessageReceivedMahuaEvent.total = (int)jd["pagination"]["pages"];
-            //GroupMessageReceivedMahuaEvent._mahuaApi.SendPrivateMessage(context.FromQq).Text("共几页" + 
-            //    GroupMessageReceivedMahuaEvent.total).Done();
             if (illustbeforeList == null)
             {
                 illustbeforeList = new List<pixivIllust>();
@@ -82,8 +75,6 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             }
             if (page < (int)jd["pagination"]["pages"])
             {
-                //mahuaApi.SendPrivateMessage(context.FromQq).Text("正在下载" + page).Done();
-                //GroupMessageReceivedMahuaEvent.page = page;
                 if (Profile._mahuaApi != null)
                 {
                     Profile._mahuaApi.SendPrivateMessage(Profile.ExceptionSender).Text(mode + "     " + page).Done();
@@ -92,7 +83,6 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             }
             else
             {
-                //mahuaApi.SendPrivateMessage(context.FromQq).Text("正在下载原图").Done();
                 List<pixivIllust> illust_ = new List<pixivIllust>();
                 foreach (var item in illustbeforeList)
                 {
@@ -104,9 +94,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                         returns = await task;//run first item's detail                
                     }
                     catch (Exception ex)
-                    {
-                        //GroupMessageReceivedMahuaEvent._mahuaApi.SendPrivateMessage(context.FromQq).Text(ex.ToString()).Done();
-                        //throw;
+                    {                                               
                         returns = null;
                     }
                     if (returns != null)
@@ -123,7 +111,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                         CancelTokenSource = new CancellationTokenSource();                       
                         foreach (var item in items.OriginalURL)
                         {                            
-                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("D:/Unity/Mikot/{0}/", mode), item, null, CancelTokenSource);
+                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("D:/Pixiv/Mikot/{0}/", mode), item, null, CancelTokenSource);
                             string imagepath = null;
                             try
                             {
