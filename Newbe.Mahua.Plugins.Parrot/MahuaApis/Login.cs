@@ -111,7 +111,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                         CancelTokenSource = new CancellationTokenSource();                       
                         foreach (var item in items.OriginalURL)
                         {                            
-                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("D:/Pixiv/Mikot/{0}/", mode), item, null, CancelTokenSource);
+                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("{0}{1}/", Profile.ImagePath, mode), item, null, CancelTokenSource);
                             string imagepath = null;
                             try
                             {
