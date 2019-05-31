@@ -12,10 +12,13 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
         public const string userName = "";
         public const string passWord = "";
 
-        public const uint limitCount = 1000; //限制每个排行最多下载多少,一个作者会有多张图片 如果不限制基本上可以是20g起步
+        public const uint limitCount = 500; //限制每个排行最多下载多少,一个作者会有多张图片 如果不限制基本上可以是20g起步
 
         public const string ExceptionSender = "";
         public const string ImagePath = "D:/Pixiv/Mikot/";
+        public static DateTime DateTime = DateTime.Now; //记录上次图片什么时候发送
+        public static int timeCD = 5; //每次图片的个
+        public static bool DownloadOriginalURL = false; //是否下载原图
         //不下载某类型图片  0插图 1漫画 2动图
         public static  List<int> black = new List<int>
         {

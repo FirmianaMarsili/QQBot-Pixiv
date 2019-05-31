@@ -102,8 +102,19 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
                 else
                 {
                     if (context.Message == ("不够色！") || context.Message == ("不够色!") || context.Message == ("不够色"))
-                    {                        
-                        bool flag = true;
+                    {
+                        bool flag = false;
+                        var time = DateTime.Now - Profile.DateTime;
+                        if (time.TotalSeconds < Profile.timeCD)
+                        {
+                            flag = false;
+                        }
+                        else
+                        {
+                            flag = true;
+                            Profile.DateTime = DateTime.Now;
+                        }
+                       
                         if (flag)
                         {
                             if (Login.instance == null)
@@ -176,7 +187,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
                         {
                             try
                             {
-                                _mahuaApi.SendGroupMessage(context.FromGroup).Text("正在冷却").At(context.FromQq).Done();
+                                _mahuaApi.SendGroupMessage(context.FromGroup).Text(string.Format("正在冷却,剩余{0}秒", Profile.timeCD - (int)time.TotalSeconds)).At(context.FromQq).Done();
                             }
                             catch (Exception ex)
                             {                                

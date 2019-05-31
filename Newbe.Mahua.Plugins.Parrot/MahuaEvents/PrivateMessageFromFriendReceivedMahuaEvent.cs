@@ -31,8 +31,8 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
         }
 
         public void ProcessFriendMessage(PrivateMessageFromFriendReceivedContext context)
-        {
-            ///* --和群一样的功能 解开注释可以使用
+        {           
+            /* --和群一样的功能 解开注释可以使用
             try
             {
                 if (context.Message.Contains("mode_"))
@@ -201,7 +201,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
                 _mahuaApi.SendPrivateMessage(context.FromQq).Text(ex.ToString()).Done();
                
             }
-          //*/
+          */
 
         }
     }

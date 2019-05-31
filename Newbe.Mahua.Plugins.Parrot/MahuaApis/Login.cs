@@ -108,8 +108,17 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                 {
                     if (Profile.path[mode].Count <= Profile.limitCount && !Profile.black.Contains((int)items.Type))
                     {
-                        CancelTokenSource = new CancellationTokenSource();                       
-                        foreach (var item in items.OriginalURL)
+                        CancelTokenSource = new CancellationTokenSource();
+                        List<string> url = null;
+                        if (Profile.DownloadOriginalURL)
+                        {
+                            url = items.OriginalURL;
+                        }
+                        else
+                        {
+                            url = items.MediumURL;
+                        }
+                        foreach (var item in url)
                         {                            
                             var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("{0}{1}/", Profile.ImagePath, mode), item, null, CancelTokenSource);
                             string imagepath = null;
@@ -125,7 +134,8 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
 
                             if (imagepath != null)
                             {                                
-                                 Profile.path[mode].Add(imagepath);                                                         
+                                 Profile.path[mode].Add(imagepath);
+                                Profile.path[mode] = Shuffle(Profile.path[mode]);
                             }                      
                         }
                     }
@@ -134,6 +144,19 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             }
 
 
+        }
+
+        private List<string> Shuffle(List<string> array)
+        {
+            Random random = new Random();
+            for (int i = 0; i < array.Count; i++)
+            {
+                int index = random.Next(0, array.Count - i);
+                string temp = array[index];
+                array[index] = array[array.Count - i - 1];
+                array[array.Count - i - 1] = temp;
+            }
+            return array;
         }
         private pixivIllust fromJsonSetIllust_detail(JObject json_illust)
         {
