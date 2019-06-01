@@ -19,7 +19,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
         public static DateTime DateTime = DateTime.Now; //记录上次图片什么时候发送
         public static uint timeCD = 5; //每次图片的个
         public static bool DownloadOriginalURL = true; //是否下载原图
-        public static uint imageLength = 0; //图片压缩后的大小 kb  0则不压缩
+        public static uint imageLength = 50; //图片压缩后的大小 kb  0则不压缩
         public static bool msgCancel = true; //消息撤回
         //不下载某类型图片  0插图 1漫画 2动图
         public static  List<int> black = new List<int>

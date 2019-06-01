@@ -25,10 +25,6 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
 
         public void ProcessGroupMessage(GroupMessageReceivedContext context)
         {
-            if (context.FromQq == "804112469")
-            {
-                _mahuaApi.SendGroupMessage(context.FromGroup).At(Profile.ExceptionSender).Done();
-            }
             try
             {
                 if (context.FromQq == Profile.ExceptionSender)

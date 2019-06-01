@@ -81,4 +81,3 @@ E:\Test\QQBot-Pixiv\Newbe.Mahua.Plugins.Parrot\obj\Debug\Newbe.Mahua.Plugins.Par
 E:\Test\QQBot-Pixiv\Newbe.Mahua.Plugins.Parrot\obj\Debug\Newbe.Mahua.Plugins.Parrot.csproj.CopyComplete
 E:\Test\QQBot-Pixiv\Newbe.Mahua.Plugins.Parrot\obj\Debug\Newbe.Mahua.Plugins.Parrot.dll
 E:\Test\QQBot-Pixiv\Newbe.Mahua.Plugins.Parrot\obj\Debug\Newbe.Mahua.Plugins.Parrot.pdb
-E:\Test\QQBot-Pixiv\Newbe.Mahua.Plugins.Parrot\obj\Debug\Newbe.Mahua.Plugins.Parrot.csprojAssemblyReference.cache
