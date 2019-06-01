@@ -12,26 +12,21 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
         public const string userName = "";
         public const string passWord = "";
 
-        public const uint limitCount = 500; //限制每个排行最多下载多少,一个作者会有多张图片 如果不限制基本上可以是20g起步
+        public const uint limitCount = 0; //限制每个排行最多下载多少,一个作者会有多张图片 如果不限制基本上可以是20g起步 //0则不限制
 
         public const string ExceptionSender = "";
         public const string ImagePath = "D:/Pixiv/Mikot/";
         public static DateTime DateTime = DateTime.Now; //记录上次图片什么时候发送
-        public static int timeCD = 5; //每次图片的个
-        public static bool DownloadOriginalURL = false; //是否下载原图
+        public static uint timeCD = 5; //每次图片的个
+        public static bool DownloadOriginalURL = true; //是否下载原图
+        public static uint imageLength = 0; //图片压缩后的大小 kb  0则不压缩
+        public static bool msgCancel = true; //消息撤回
         //不下载某类型图片  0插图 1漫画 2动图
         public static  List<int> black = new List<int>
         {
             1            
         };
-
-        public static Newbe.Mahua.IMahuaApi _mahuaApi
-        {
-            get
-            {
-                return Newbe.Mahua.Plugins.Parrot.MahuaEvents.PrivateMessageFromFriendReceivedMahuaEvent._mahuaApi;
-            }
-        }
+      
         public static Dictionary<string, bool> Done = new Dictionary<string, bool>
         {
             ["daily"] = false,

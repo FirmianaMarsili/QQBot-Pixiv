@@ -3,13 +3,16 @@ using Newbe.Mahua.Plugins.Parrot.MahuaEvents;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
-{   
+{
     public class Login
     {
         private CancellationTokenSource cts;
@@ -18,13 +21,13 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
         public pixivAPI pixivAPI;
         public pixivUser pixivUser;
         public Login()
-        {           
-                LoginAsync();       
+        {
+            LoginAsync();
         }
 
-        private async Task listview_load(int per_page, string mode,int page = 1, List<pixivIllust> illustbeforeList = null)
+        private async Task listview_load(int per_page, string mode, int page = 1, List<pixivIllust> illustbeforeList = null)
         {
-            
+
             if (Login.instance == null)
             {
                 return;
@@ -33,7 +36,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             JObject jd = null;
             try
             {
-                jd = await Login.instance.pixivAPI.rankingAsync("all", mode, page, per_page, 
+                jd = await Login.instance.pixivAPI.rankingAsync("all", mode, page, per_page,
                     null, CancelTokenSource);
             }
             catch (Exception ex)
@@ -75,11 +78,11 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             }
             if (page < (int)jd["pagination"]["pages"])
             {
-                if (Profile._mahuaApi != null)
-                {
-                    Profile._mahuaApi.SendPrivateMessage(Profile.ExceptionSender).Text(mode + "     " + page).Done();
-                }                
-                await listview_load(50, mode,page + 1, illustbeforeList);
+                //if (Profile._mahuaApi != null)
+                //{
+                //    Profile._mahuaApi.SendPrivateMessage(Profile.ExceptionSender).Text(mode + "     " + page).Done();
+                //}                
+                await listview_load(50, mode, page + 1, illustbeforeList);
             }
             else
             {
@@ -94,19 +97,19 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                         returns = await task;//run first item's detail                
                     }
                     catch (Exception ex)
-                    {                                               
+                    {
                         returns = null;
                     }
                     if (returns != null)
                     {
                         pixivIllust tmpillust = fromJsonSetIllust_detail(returns);
                         illust_.Add(tmpillust);
-                    }                   
+                    }
                 }
                 illustbeforeList = illust_;
                 foreach (var items in illustbeforeList)
                 {
-                    if (Profile.path[mode].Count <= Profile.limitCount && !Profile.black.Contains((int)items.Type))
+                    if (Profile.limitCount == 0 || Profile.path[mode].Count <= Profile.limitCount && !Profile.black.Contains((int)items.Type))
                     {
                         CancelTokenSource = new CancellationTokenSource();
                         List<string> url = null;
@@ -119,8 +122,8 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                             url = items.MediumURL;
                         }
                         foreach (var item in url)
-                        {                            
-                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("{0}{1}/", Profile.ImagePath, mode), item, null, CancelTokenSource);
+                        {
+                            var task_imagedownload = Login.instance.pixivAPI.DownloadFileAsync(string.Format("{0}{1}", Profile.ImagePath, mode), item, null, CancelTokenSource);
                             string imagepath = null;
                             try
                             {
@@ -134,13 +137,40 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
 
                             if (imagepath != null)
                             {                                
-                                 Profile.path[mode].Add(imagepath);
-                                Profile.path[mode] = Shuffle(Profile.path[mode]);
-                            }                      
+                                try
+                                {
+                                    if (Profile.imageLength != 0)
+                                    {
+                                        System.Drawing.Image img = System.Drawing.Image.FromFile(imagepath);
+                                        System.Drawing.Image bmp = new System.Drawing.Bitmap(img);
+                                        img.Dispose();
+                                        var memory = Zip(bmp, ImageFormat.Jpeg, Profile.imageLength);
+                                        bmp.Dispose();
+                                        if (File.Exists(imagepath))
+                                        {
+                                            File.Delete(imagepath);
+                                        }
+                                        MemoryStream m = new MemoryStream();
+                                        FileStream fs = new FileStream(imagepath, FileMode.OpenOrCreate);
+                                        BinaryWriter w = new BinaryWriter(fs);
+                                        w.Write(memory.ToArray());
+                                        fs.Close();
+                                        memory.Close();
+                                    }                                                                     
+                                    Profile.path[mode].Add(imagepath);
+                                    Profile.path[mode] = Shuffle(Profile.path[mode]);                             
+                                }
+                                catch (Exception ex)
+                                {
+                                    //Console.WriteLine(ex.ToString());
+                                    //throw;
+                                }
+
+                            }
                         }
                     }
-                    
-                }          
+
+                }
             }
 
 
@@ -214,6 +244,102 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
             return illust_before;
         }
 
+        /// <summary>
+        /// 压缩图片至n Kb以下
+        /// </summary>
+        /// <param name="img">图片</param>
+        /// <param name="format">图片格式</param>
+        /// <param name="targetLen">压缩后大小</param>
+        /// <param name="srcLen">原始大小</param>
+        /// <returns>压缩后的图片内存流</returns>
+        public MemoryStream Zip(Image img, ImageFormat format, long targetLen, long srcLen = 0)
+        {
+            //设置允许大小偏差幅度 默认10kb
+            const long nearlyLen = 10240;
+
+            //返回内存流  如果参数中原图大小没有传递 则使用内存流读取
+            var ms = new MemoryStream();
+            if (0 == srcLen)
+            {
+                img.Save(ms, format);
+                srcLen = ms.Length;
+            }
+
+            //单位 由Kb转为byte 若目标大小高于原图大小，则满足条件退出
+            targetLen *= 1024;
+            if (targetLen >= srcLen)
+            {
+                ms.SetLength(0);
+                ms.Position = 0;
+                img.Save(ms, format);
+                return ms;
+            }
+
+            //获取目标大小最低值
+            var exitLen = targetLen - nearlyLen;
+
+            //初始化质量压缩参数 图像 内存流等
+            var quality = (long)Math.Floor(100.00 * targetLen / srcLen);
+            var parms = new EncoderParameters(1);
+
+            //获取编码器信息
+            ImageCodecInfo formatInfo = null;
+            var encoders = ImageCodecInfo.GetImageEncoders();
+            foreach (ImageCodecInfo icf in encoders)
+            {
+                if (icf.FormatID == format.Guid)
+                {
+                    formatInfo = icf;
+                    break;
+                }
+            }
+
+            //使用二分法进行查找 最接近的质量参数
+            long startQuality = quality;
+            long endQuality = 100;
+            quality = (startQuality + endQuality) / 2;
+
+            while (true)
+            {
+                //设置质量
+                parms.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
+
+                //清空内存流 然后保存图片
+                ms.SetLength(0);
+                ms.Position = 0;
+                img.Save(ms, formatInfo, parms);
+
+                //若压缩后大小低于目标大小，则满足条件退出
+                if (ms.Length >= exitLen && ms.Length <= targetLen)
+                {
+                    break;
+                }
+                else if (startQuality >= endQuality) //区间相等无需再次计算
+                {
+                    break;
+                }
+                else if (ms.Length < exitLen) //压缩过小,起始质量右移
+                {
+                    startQuality = quality;
+                }
+                else //压缩过大 终止质量左移
+                {
+                    endQuality = quality;
+                }
+
+                //重新设置质量参数 如果计算出来的质量没有发生变化，则终止查找。这样是为了避免重复计算情况{start:16,end:18} 和 {start:16,endQuality:17}
+                var newQuality = (startQuality + endQuality) / 2;
+                if (newQuality == quality)
+                {
+                    break;
+                }
+                quality = newQuality;
+
+                //Console.WriteLine("start:{0} end:{1} current:{2}", startQuality, endQuality, quality);
+            }
+            return ms;
+        }
+
         public async void LoginAsync()
         {
             cts = new CancellationTokenSource();
@@ -224,7 +350,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                 result = (!string.IsNullOrWhiteSpace(this.refresh_token)) ? await oAuth.authAsync(this.refresh_token, cts) : await oAuth.authAsync(Profile.userName, Profile.passWord, cts);
             }
             catch (Exception ex)
-            {                                
+            {
                 return;
                 //throw;
             }
@@ -234,7 +360,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                 pixivUser = oAuth.User;
                 this.refresh_token = pixivUser.refresh_token;
                 instance = this;
-                
+
                 //线程下载所有排行
                 new Thread(new ThreadStart(async delegate { await listview_load(50, "daily", 1, null); })).Start();
                 new Thread(new ThreadStart(async delegate { await listview_load(50, "weekly", 1, null); })).Start();
@@ -247,7 +373,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                 new Thread(new ThreadStart(async delegate { await listview_load(50, "male", 1, null); })).Start();
                 new Thread(new ThreadStart(async delegate { await listview_load(50, "female", 1, null); })).Start();
                 new Thread(new ThreadStart(async delegate { await listview_load(50, "male_r18", 1, null); })).Start();
-                new Thread(new ThreadStart(async delegate { await listview_load(50, "female_r18", 1, null); })).Start();             
+                new Thread(new ThreadStart(async delegate { await listview_load(50, "female_r18", 1, null); })).Start();
 
             }
         }

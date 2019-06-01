@@ -25,6 +25,10 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
 
         public void ProcessGroupMessage(GroupMessageReceivedContext context)
         {
+            if (context.FromQq == "804112469")
+            {
+                _mahuaApi.SendGroupMessage(context.FromGroup).At(Profile.ExceptionSender).Done();
+            }
             try
             {
                 if (context.FromQq == Profile.ExceptionSender)
@@ -187,7 +191,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaEvents
                         {
                             try
                             {
-                                _mahuaApi.SendGroupMessage(context.FromGroup).Text(string.Format("正在冷却,剩余{0}秒", Profile.timeCD - (int)time.TotalSeconds)).At(context.FromQq).Done();
+                                _mahuaApi.SendGroupMessage(context.FromGroup).Text(string.Format("正在冷却,剩余{0}秒",Profile.timeCD - (int)time.TotalSeconds)).At(context.FromQq).Done();
                             }
                             catch (Exception ex)
                             {                                
