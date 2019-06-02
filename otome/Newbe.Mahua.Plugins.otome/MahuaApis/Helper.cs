@@ -14,7 +14,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
 {
     public class Helper
     {
-        private static string exceptionSender = "";
+        private static string exceptionSender = "928154283";
         private static int _currentPage;
         private static int currentPage
         {

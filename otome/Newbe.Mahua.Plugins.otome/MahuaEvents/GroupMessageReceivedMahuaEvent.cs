@@ -31,7 +31,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaEvents
                     string imageUrl = Helper.GetPath(_mahuaApi);
                     if (imageUrl == null)
                     {
-                        _mahuaApi.SendPrivateMessage(context.FromQq).Text("正在获取最新图片").Done();
+                        _mahuaApi.SendGroupMessage(context.FromGroup).Text("正在获取最新图片").At(context.FromQq).Done();
                     }
                     else
                     {
