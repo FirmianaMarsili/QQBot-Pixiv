@@ -17,4 +17,3 @@ D:\Download\PBot\QQBot-Pixiv\otome\Newbe.Mahua.Plugins.otome\obj\Debug\Newbe.Mah
 D:\Download\PBot\QQBot-Pixiv\otome\Newbe.Mahua.Plugins.otome\obj\Debug\Newbe.Mahua.Plugins.otome.csproj.CopyComplete
 D:\Download\PBot\QQBot-Pixiv\otome\Newbe.Mahua.Plugins.otome\obj\Debug\Newbe.Mahua.Plugins.otome.dll
 D:\Download\PBot\QQBot-Pixiv\otome\Newbe.Mahua.Plugins.otome\obj\Debug\Newbe.Mahua.Plugins.otome.pdb
-D:\Download\PBot\QQBot-Pixiv\otome\Newbe.Mahua.Plugins.otome\obj\Debug\Newbe.Mahua.Plugins.otome.csprojAssemblyReference.cache

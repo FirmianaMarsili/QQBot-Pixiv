@@ -10,7 +10,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaEvents
     public class PrivateMessageFromFriendReceivedMahuaEvent
         : IPrivateMessageFromFriendReceivedMahuaEvent
     {
-        private readonly IMahuaApi _mahuaApi;
+        public readonly IMahuaApi _mahuaApi;
 
         public PrivateMessageFromFriendReceivedMahuaEvent(
             IMahuaApi mahuaApi)
@@ -22,22 +22,18 @@ namespace Newbe.Mahua.Plugins.otome.MahuaEvents
         {
             if (context.Message.Equals("百合"))
             {
-                _mahuaApi.SendPrivateMessage(context.FromQq).Text("1").Done();
                 bool flag = false;
                 TimeSpan time = DateTime.Now - Helper.dateTime;
                 flag = time.TotalSeconds > Helper.timeCD;
                 if (flag)
                 {
-                    _mahuaApi.SendPrivateMessage(context.FromQq).Text("2").Done();
-                    string imageUrl = Helper.GetPath();
+                    string imageUrl = Helper.GetPath( _mahuaApi);
                     if (imageUrl == null)
                     {
                         _mahuaApi.SendPrivateMessage(context.FromQq).Text("正在获取最新图片").Done();
                     }
                     else
                     {
-                        _mahuaApi.SendPrivateMessage(context.FromQq).Text("3").Done();
-                        _mahuaApi.SendPrivateMessage(context.FromQq).Text(imageUrl).Done();
                         
                         Helper.dateTime = DateTime.Now;
                         _mahuaApi.SendPrivateMessage(context.FromQq).Image(imageUrl).Done();

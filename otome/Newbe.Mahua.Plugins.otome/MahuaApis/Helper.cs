@@ -14,6 +14,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
 {
     public class Helper
     {
+        private static string exceptionSender = "";
         private static int _currentPage;
         private static int currentPage
         {
@@ -131,7 +132,13 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
             }
         }
 
-        private static string url = string.Format("http://otome.me/post/index/ninki/mouth/p/{0}.html", currentPage.ToString());
+        private static string url
+        {
+            get
+            {
+                return string.Format("http://otome.me/post/index/ninki/mouth/p/{0}.html", currentPage.ToString());
+            }
+        }
 
         private static List<string> imageUrl = new List<string>();
         private static bool isLast
@@ -147,9 +154,10 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
                     else
                     {
                         bool flag = currentIndex >= imageUrl.Count;
-                        if (flag && loading)
+                        if (flag)
                         {
                             currentPage += 1;
+                            return true;
                         }
                         return false;
                     }                    
@@ -235,7 +243,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
             loading = false;
         }
 
-        public static string GetPath()
+        public static string GetPath( IMahuaApi mahuaApi)
         {
             if (loading)
             {
@@ -251,7 +259,8 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
+                        //Console.WriteLine(ex.ToString());
+                        mahuaApi.SendPrivateMessage(exceptionSender).Text(ex.ToString()).Done();
                         //throw;
                     }
                 })).Start();
@@ -260,12 +269,22 @@ namespace Newbe.Mahua.Plugins.otome.MahuaApis
             else
             {
                 string str = null;
-                lock (imageUrl)
-                {
-                    str = imageUrl[currentIndex];
-                    currentIndex += 1;
+                try
+                {                   
+                    lock (imageUrl)
+                    {
+                        str = imageUrl[currentIndex];
+                        currentIndex += 1;
+                    }                 
                 }
+                catch (Exception ex)
+                {
+                    mahuaApi.SendPrivateMessage(exceptionSender).Text(ex.ToString()).Done();
+                    //throw;
+                }              
                 return str;
+
+
             }
         }
 

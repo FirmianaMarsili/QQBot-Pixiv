@@ -28,7 +28,7 @@ namespace Newbe.Mahua.Plugins.otome.MahuaEvents
                 flag = time.TotalSeconds > Helper.timeCD;
                 if (flag)
                 {
-                    string imageUrl = Helper.GetPath();
+                    string imageUrl = Helper.GetPath(_mahuaApi);
                     if (imageUrl == null)
                     {
                         _mahuaApi.SendPrivateMessage(context.FromQq).Text("正在获取最新图片").Done();
