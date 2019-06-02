@@ -1,4 +1,4 @@
-# QQBot-Pixiv
+# Pixiv
 
 ## Requirements:    
   .net 4.5 
@@ -17,8 +17,22 @@
 需要科学上网,不然软件无法连接p站
 
 
-基于MIT License
 
-### PS:
-  心血来潮的产物,代码极烂,基本不考虑重构和添加新功能,大概
+
+
+# otome
+
+## Requirements:    
+  .net 4.5 
+## Profile:
+获取[百合居](http://otome.me/)月排行榜
+
+## How To Use:
+和pixiv一样的规矩
+不过记录上次发送到那一页那一个 文件生成在D:/otome/page.txt
+
+# PS:
+  心血来潮的产物,代码极烂,基本不考虑重构,大概
+  
+  基于MIT License
 
