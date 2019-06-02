@@ -28,8 +28,7 @@
 获取[百合居](http://otome.me/)月排行榜
 
 ## How To Use:
-和pixiv一样的规矩
-不过会记录上次发送到那一页那一个 文件生成在D:/otome/page.txt
+和pixiv一样的规矩<br>不过会记录上次发送到那一页那一个 文件生成在D:/otome/page.txt
 
 # PS:
   心血来潮的产物,代码极烂,基本不考虑重构,大概
