@@ -24,7 +24,7 @@
 
 ## Requirements:    
   .net 4.5 
-## Profile:
+## Description:
 获取[百合居](http://otome.me/)月排行榜
 
 ## How To Use:
