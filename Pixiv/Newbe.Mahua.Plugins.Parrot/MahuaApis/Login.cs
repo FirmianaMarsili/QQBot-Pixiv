@@ -109,7 +109,16 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
                 illustbeforeList = illust_;
                 foreach (var items in illustbeforeList)
                 {
-                    if (Profile.limitCount == 0 || Profile.path[mode].Count <= Profile.limitCount && !Profile.black.Contains((int)items.Type))
+                    bool flag = false;
+                    if (Profile.limitCount == 0)
+                    {
+                        flag = !Profile.black.Contains((int)items.Type);
+                    }
+                    else
+                    {
+                        flag = Profile.path[mode].Count <= Profile.limitCount && !Profile.black.Contains((int)items.Type);
+                    }
+                    if (flag)
                     {
                         CancelTokenSource = new CancellationTokenSource();
                         List<string> url = null;
@@ -168,8 +177,7 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
 
                             }
                         }
-                    }
-
+                    }                  
                 }
             }
 
