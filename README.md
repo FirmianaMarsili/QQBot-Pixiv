@@ -3,7 +3,7 @@
 ## Requirements:    
   .net 4.5 
 ## Description:
-为某沙雕群编写的一个自动爬取p站上排行榜并同过机器人发送
+为某沙雕群编写的一个自动爬取[p站](https://www.pixiv.net/)上排行榜并同过机器人发送
 ## References:
 
 [pixiv_API-c-](https://github.com/xingoxu/pixiv_API-c-)  
