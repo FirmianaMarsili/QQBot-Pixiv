@@ -30,8 +30,22 @@
 ## How To Use:
 和pixiv一样的规矩<br>不过会记录上次发送到那一页那一个 文件生成在D:/otome/page.txt
 
+
+# yande
+
+## Requirements
+  .net 4.5
+## Description: 
+获取[yande](https://yande.re/post)里自定义搜索的图片
+
+## How To Use:
+照旧<br>文件生成在D:/yande下
+
 # PS:
+
   心血来潮的产物,代码极烂,基本不考虑重构,大概
+  
+  有什么好的网站可以私信928154283@qq.com
   
   基于MIT License
 
