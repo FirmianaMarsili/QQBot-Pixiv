@@ -1,0 +1,3526 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Newbe.Mahua</name>
+    </assembly>
+    <members>
+        <member name="T:Newbe.Mahua.GroupInfo">
+            <summary>
+            群信息
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupInfo.Group">
+            <summary>
+            群号
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupInfo.Name">
+            <summary>
+            群名称
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.Gender.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.Gender.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.Gender.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.GroupMemberAuthority">
+            <summary>
+            群成员权限
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.GroupMemberAuthority.Unknown">
+            <summary>
+            位置
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.GroupMemberAuthority.Normal">
+            <summary>
+            普通成员
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.GroupMemberAuthority.Manager">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.GroupMemberAuthority.Leader">
+            <summary>
+            群主
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.GroupMemberInfo">
+            <summary>
+            群成员的信息。
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Age">
+            <summary>
+            此群成员在其个人资料上所填写的年龄。
+            </summary>
+            <returns> </returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Area">
+            <summary>
+            此群成员在其个人资料上所填写的区域。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Authority">
+            <summary>
+            此群成员的身份。
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.CanModifyInGroupName">
+            <summary>
+            指示此群成员是否能够修改所有群成员名片的值。
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Gender">
+            <summary>
+            此群成员在其个人资料上所填写的性别。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.InGroupName">
+            <summary>
+            此群成员的群名片。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.SpecialTitle">
+            <summary>
+            此群成员的头衔。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Group">
+            <summary>
+            此群成员所在群号。
+            </summary>
+            <returns> </returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.HasBadRecord">
+            <summary>
+            指示此群成员是否有不良记录的值。
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.TitleExpirationTime">
+            <summary>
+            头衔过期时间。
+            </summary>
+            <returns> </returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.JoinTime">
+            <summary>
+            此群成员的入群时间。
+            </summary>
+            <returns> </returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.LastSpeakingTime">
+            <summary>
+            此群成员最后发言日期。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Level">
+            <summary>
+            此群成员的群内等级。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.NickName">
+            <summary>
+            此群成员的昵称。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.GroupMemberInfo.Qq">
+            <summary>
+            此群成员的QQ号码。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.IMahuaAdministration">
+            <summary>
+            设置中心接口
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaAdministration.Show(Autofac.ILifetimeScope)">
+            <summary>
+            打开设置中心
+            </summary>
+            <param name="lifetimeScope"></param>
+        </member>
+        <member name="T:Newbe.Mahua.IMahuaApi">
+            <summary>
+            MahuaApi
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendPrivateMessage(System.String,System.String)">
+            <summary>
+            发送私聊消息
+            </summary>
+            <param name="toQq">目标QQ号</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendPrivateMessageWithCancelToken(System.String,System.String)">
+            <summary>
+            发送私聊消息（可撤回）
+            </summary>
+            <param name="toQq">目标QQ号</param>
+            <param name="message">消息内容</param>
+            <returns>
+            用于撤回信息的Token
+            </returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendGroupMessage(System.String,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendGroupMessageWithCancelToken(System.String,System.String)">
+            <summary>
+            发送群消息（可撤回）
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="message">消息内容</param>
+            <returns>
+            用于撤回信息的Token
+            </returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendDiscussMessage(System.String,System.String)">
+            <summary>
+            发送讨论组消息
+            </summary>
+            <param name="toDiscuss">目标讨论组</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendDiscussMessageWithCancelToken(System.String,System.String)">
+            <summary>
+            发送讨论组消息（可撤回）
+            </summary>
+            <param name="toDiscuss">目标讨论组</param>
+            <param name="message">消息内容</param>
+            <returns>
+            用于撤回信息的Token
+            </returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendLike(System.String)">
+            <summary>
+            发送名片赞
+            </summary>
+            <param name="toQq">目标QQ</param>
+            <returns></returns>
+            <remarks>:QQ名片赞 10赞每Q每日 至多50人</remarks>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetCookies">
+            <summary>
+            取Cookies
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetBkn">
+            <summary>
+            取bkn
+            </summary>
+            <returns>bkn</returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetLoginQq">
+            <summary>
+            取当前登录QQ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetLoginNick">
+            <summary>
+            取当前登录QQ昵称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.KickGroupMember(System.String,System.String,System.Boolean)">
+            <summary>
+            移出群成员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">目标QQ</param>
+            <param name="rejectForever">如果为真，则“不再接收此人加群申请”，请慎用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.BanGroupMember(System.String,System.String,System.TimeSpan)">
+            <summary>
+            禁言某群成员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">目标QQ</param>
+            <param name="duration">禁言的时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RemoveBanGroupMember(System.String,System.String)">
+            <summary>
+            取消禁言某群成员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">目标QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.EnableGroupAdmin(System.String,System.String)">
+            <summary>
+            设置群管理员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">被设置的QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.DisableGroupAdmin(System.String,System.String)">
+            <summary>
+            删除群管理员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">被设置的Q</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetGroupMemberSpecialTitle(System.String,System.String,System.String,System.TimeSpan)">
+            <summary>
+            设置群成员专属头衔
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">目标QQ</param>
+            <param name="specialTitle">如果要删除，这里填空</param>
+            <param name="duration">专属头衔有效期。如果永久有效，则使用<see cref="F:System.TimeSpan.MaxValue"/></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetBanAllGroupMembersOption(System.String,System.Boolean)">
+            <summary>
+            设置全群禁言
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="enabled">true为启用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.BanGroupAnonymousMember(System.String,System.String,System.TimeSpan)">
+            <summary>
+            设置禁言某匿名群员
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="anonymous">匿名名称，<see cref="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.FromAnonymous"/>参数</param>
+            <param name="duration">禁言的时间。不支持解禁</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetGroupAnonymousOption(System.String,System.Boolean)">
+            <summary>
+            设置群匿名设置
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="enabled">true为启用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetGroupMemberCard(System.String,System.String,System.String)">
+            <summary>
+            设置群成员名片
+            </summary>
+            <param name="toGroup">目标群</param>
+            <param name="toQq">被设置的QQ</param>
+            <param name="groupMemberCard">群名片</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.LeaveGroup(System.String)">
+            <summary>
+            退出群
+            </summary>
+            <param name="toGroup">目标群</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.DissolveGroup(System.String)">
+            <summary>
+            解散群
+            </summary>
+            <param name="toGroup">目标群</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.LeaveDiscuss(System.String)">
+            <summary>
+            退出讨论组
+            </summary>
+            <param name="toDiscuss">目标讨论组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.AcceptFriendAddingRequest(System.String,System.String,System.String)">
+            <summary>
+            同意添加好友请求
+            </summary>
+            <param name="addingFriendRequestId">好友请求Id，<see cref="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.AddingFriendRequestId"/></param>
+            <param name="fromQq">发出申请的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.FromQq"/></param>
+            <param name="friendRemark">添加后的好友备注</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RejectFriendAddingRequest(System.String,System.String)">
+            <summary>
+            拒绝添加好友请求
+            </summary>
+            <param name="addingFriendRequestId">好友请求Id，<see cref="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.SendTime"/></param>
+            <param name="fromQq">发出申请的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.FromQq"/></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.AcceptGroupJoiningRequest(System.String,System.String,System.String)">
+            <summary>
+            管理员同意入群申请
+            </summary>
+            <param name="groupJoiningRequestId">加入群请求Id，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.GroupJoiningRequestId"/></param>
+            <param name="toGroup">申请加入的群，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.ToGroup"/></param>
+            <param name="fromQq">发出申请的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.FromQq"/></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RejectGroupJoiningRequest(System.String,System.String,System.String,System.String)">
+            <summary>
+            管理员拒绝入群申请
+            </summary>
+            <param name="groupJoiningRequestId">加入群请求Id，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.GroupJoiningRequestId"/></param>
+            <param name="toGroup">申请加入的群，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.ToGroup"/></param>
+            <param name="fromQq">发出申请的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.FromQq"/></param>
+            <param name="reason">原因</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.AcceptGroupJoiningInvitation(System.String,System.String,System.String)">
+            <summary>
+            接受入群邀请
+            </summary>
+            <param name="groupJoiningInvitationId">入群邀请Id，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.GroupJoiningInvitationId"/></param>
+            <param name="toGroup">接受加入的群，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.ToGroup"/></param>
+            <param name="fromQq">发出接受的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.FromQq"/></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RejectGroupJoiningInvitation(System.String,System.String,System.String,System.String)">
+            <summary>
+            拒绝入群邀请
+            </summary>
+            <param name="groupJoiningInvitationId">入群邀请Id，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.GroupJoiningInvitationId"/></param>
+            <param name="toGroup">接受加入的群，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.ToGroup"/></param>
+            <param name="fromQq">发出接受的QQ，<see cref="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.FromQq"/></param>
+            <param name="reason">原因</param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.BanFriend(System.String)">
+            <summary>
+            将QQ移入黑名单
+            </summary>
+            <param name="toQq"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RemoveBanFriend(System.String)">
+            <summary>
+            将QQ移出黑名单
+            </summary>
+            <param name="toQq"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetNotice(System.String,System.String,System.String)">
+            <summary>
+            发布群公告
+            </summary>
+            <param name="toGroup"></param>
+            <param name="title"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.RemoveFriend(System.String)">
+            <summary>
+            删除好友
+            </summary>
+            <param name="toQq"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.JoinGroup(System.String,System.String)">
+            <summary>
+            主动加群
+            </summary>
+            <param name="toGroup"></param>
+            <param name="reason"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetGroupMemebersWithModel(System.String)">
+            <summary>
+            取群成员列表
+            </summary>
+            <param name="toGroup">目标群</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetGroupsWithModel">
+            <summary>
+            获取群列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetGroupMemebers(System.String)">
+            <summary>
+            获取群成员列表（返回字符串）
+            </summary>
+            <param name="toGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetGroups">
+            <summary>
+            获取群列表（返回字符串）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetFriends">
+            <summary>
+            获取好友列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendGroupJoiningInvitation(System.String,System.String)">
+            <summary>
+            发送入群邀请
+            </summary>
+            <param name="toQq"></param>
+            <param name="toGroup"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.CreateDiscuss">
+            <summary>
+            创建讨论组
+            </summary>
+            <returns>讨论组Id，为空则说明创建失败</returns>
+            <remarks>每24小时只能创建100个讨论组</remarks>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.KickDiscussMember(System.String,System.String)">
+            <summary>
+            踢出讨论组
+            </summary>
+            <param name="toDiscuss"></param>
+            <param name="toQq"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SendDiscussJoiningInvitation(System.String,System.String)">
+            <summary>
+            发送讨论组邀请
+            </summary>
+            <param name="toQq"></param>
+            <param name="toDiscuss"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetDiscusses">
+            <summary>
+            获取讨论组列表，使用<see cref="P:System.Environment.NewLine"/>分割的讨论组号列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetContainer">
+            <summary>
+            获取当前上下文运行的容器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetContainer(Autofac.ILifetimeScope)">
+            <summary>
+            设置当前上下文运行的容器
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetLifetimeScope">
+            <summary>
+            获取当前上下文运行的容器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetLifetimeScope(Autofac.ILifetimeScope)">
+            <summary>
+            设置当前上下文运行的容器
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.GetSourceContainer">
+            <summary>
+            获取全局的容器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaApi.SetSourceContainer(Autofac.IContainer)">
+            <summary>
+            设置全局的容器
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="T:Newbe.Mahua.IMahuaEvent">
+            <summary>
+            所有的MahuaEvent都需要集成此接口
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaMenuProvider.GetMenus">
+            <summary>
+            生成菜单列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.IMahuaModule">
+            <summary>
+            用于在后续的程序集中加载<see cref="T:Autofac.Module"/>模块
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaModule.GetModules">
+            <summary>
+            返回需要注册的<see cref="T:Autofac.Module"/>模块
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.IMahuaRobotManager">
+            <summary>
+            机器人实例管理器
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaRobotManager.CreateSession">
+            <summary>
+            创建会话
+            </summary>
+            <returns></returns>
+            <remarks>
+            多QQ机器人平台则返回第一个QQ
+            </remarks>
+        </member>
+        <member name="M:Newbe.Mahua.IMahuaRobotManager.CreateSession(System.String)">
+            <summary>
+            创建会话
+            </summary>
+            <param name="qq">指定的QQ机器人</param>
+            <returns></returns>
+            <exception cref="T:Newbe.Mahua.QqNotFoundException">指定的QQ不存在</exception>
+        </member>
+        <member name="T:Newbe.Mahua.INotSupportedMahuaApiConvertion">
+            <summary>
+            调用不受支持的Api的行为
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.INotSupportedMahuaApiConvertion.Handle">
+            <summary>
+            处理
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.INotSupportedMahuaApiConvertion.Handle``1(``0)">
+            <summary>
+            处理后返回一个默认的值，通常是为了处理具有返回值的方法。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.INotSupportedMahuaApiConvertion.Handle``1">
+            <summary>
+            处理后返回一个默认的值，通常是为了处理具有返回值的方法。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>default(T)</returns>
+        </member>
+        <member name="T:Newbe.Mahua.INotSupportedMessageBuilderConvertion">
+            <summary>
+            调用不受支持的MessageBuilder的行为
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.INotSupportedMessageBuilderConvertion.Handle``1">
+            <summary>
+            处理
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.Internals.MahuaPlatformValueProvider">
+            <summary>
+            当前插件平台信息读取
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.IPluginInfo">
+            <summary>
+            插件信息
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.IPluginInfo.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.IPluginInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.IPluginInfo.Author">
+            <summary>
+            作者
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.IPluginInfo.Id">
+            <summary>
+            Id，插件唯一标识
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.IPluginInfo.Description">
+            <summary>
+            插件描述信息
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.IRobotSession">
+            <summary>
+            机器人会话，开启操作QQ机器人的桥梁
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaApiExtensions">
+            <summary>
+            <see cref="T:Newbe.Mahua.IMahuaApi"/>相关的扩展方法
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaApiExtensions.GetGroupMemberInfo(Newbe.Mahua.IMahuaApi,System.String,System.String)">
+            <summary>
+            取群成员信息
+            </summary>
+            <param name="api">api</param>
+            <param name="fromGroup">目标群</param>
+            <param name="fromQq">目标QQ</param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaConvertions">
+            <summary>
+            Mahua默认规则
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaConvertions.NotSupportedMahuaApiConvertions">
+            <summary>
+            调用不受支持的Api将引发的规则
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaConvertions.NotSupportedMahuaApiConvertions.IgnoreNotSupportedMahuaApiConvertion">
+            <summary>
+            忽略此次调用继续进行下一步
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaConvertions.NotSupportedMahuaApiConvertions.GetThrowsNotSupportedMahuaApiConvertion``1">
+            <summary>
+            抛出指定的异常
+            </summary>
+            <typeparam name="TException">希望抛出的异常类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaConvertions.NotSupportedMessageBuilderConvertions.IgnoreNotSupportedMessageBuilderConvertion">
+            <summary>
+            忽略此次调用继续进行下一步
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaConvertions.NotSupportedMessageBuilderConvertions.GetThrowsNotSupportedMahuaApiConvertion``1">
+            <summary>
+            抛出指定的异常
+            </summary>
+            <typeparam name="TException">希望抛出的异常类型</typeparam>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.Enums.GroupAdminChangeType">
+            <summary>
+            群管理员启用状态
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupAdminChangeType.Enabled">
+            <summary>
+            已设为管理员
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupAdminChangeType.Disabled">
+            <summary>
+            已取消管理员
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.Enums.GroupMemberChangedType">
+            <summary>
+            群成员数目变化情况
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberChangedType.Increased">
+            <summary>
+            已增加
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberChangedType.Decreased">
+            <summary>
+            已减少
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.Enums.GroupMemberDecreasedReason">
+            <summary>
+            群成员增加原因
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberDecreasedReason.Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberDecreasedReason.Leavebyself">
+            <summary>
+            主动离开
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberDecreasedReason.Kicked">
+            <summary>
+            被管理员移除
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.Enums.GroupMemberIncreasedReason">
+            <summary>
+            群成员增加原因
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberIncreasedReason.Unknow">
+            <summary>
+            未知原因
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberIncreasedReason.AdminAllowed">
+            <summary>
+            管理员批准入群
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberIncreasedReason.GroupMemberInvitated">
+            <summary>
+            群成员邀请
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType">
+            <summary>
+            私聊消息来源
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType.Unknown">
+            <summary>
+            未知来源
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType.Friend">
+            <summary>
+            好友
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType.Online">
+            <summary>
+            在线状态
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType.Group">
+            <summary>
+            群
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaEvents.Enums.PrivateMessageFromType.DiscussGroup">
+            <summary>
+            讨论组
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IDiscussMessageReceivedMahuaEvent">
+            <summary>
+            讨论组消息接受事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IDiscussMessageReceivedMahuaEvent.ProcessDiscussGroupMessageReceived(Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext.FromDiscuss">
+            <summary>
+            发送消息QQ所属讨论组
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext.FromQq">
+            <summary>
+            发送消息的QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.DiscussMessageReceivedMahuaEventContext.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IExceptionOccuredMahuaEvent">
+            <inheritdoc />
+            <summary>
+            运行出现异常事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IExceptionOccuredMahuaEvent.HandleException(Newbe.Mahua.MahuaEvents.ExceptionOccuredContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.ExceptionOccuredContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.ExceptionOccuredContext.ContinueThrows">
+            <summary>
+            是否忽略此异常，不抛出以避免进程终止。默认为：true
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.ExceptionOccuredContext.Exception">
+            <summary>
+            异常的内容
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.ExceptionOccuredContext.SourceCommand">
+            <summary>
+            引发事件的命令对象
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IFriendAddedMahuaEvent">
+            <summary>
+            已添加新好友事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IFriendAddedMahuaEvent.ProcessFriendsAdded(Newbe.Mahua.MahuaEvents.FriendAddedMahuaEventContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.FriendAddedMahuaEventContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddedMahuaEventContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddedMahuaEventContext.FromQq">
+            <summary>
+            新好友QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IFriendAddingRequestMahuaEvent">
+            <summary>
+            好友申请接受事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IFriendAddingRequestMahuaEvent.ProcessAddingFriendRequest(Newbe.Mahua.MahuaEvents.FriendAddingRequestContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.AddingFriendRequestId">
+            <summary>
+            添加好友请求Id，用于标识此请求的唯一Id
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.FromQq">
+            <summary>
+            申请添加好友的QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.FriendAddingRequestContext.Message">
+            <summary>
+            申请添加时的附加消息
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupAdminChangedMahuaEvent">
+            <summary>
+            群管理员变更事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupAdminChangedMahuaEvent.ProcessGroupAdminChange(Newbe.Mahua.MahuaEvents.GroupAdminChangedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupAdminChangedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminChangedContext.GroupAdminChangeType">
+            <summary>
+            群管理员变更情况
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminChangedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminChangedContext.FromGroup">
+            <summary>
+            发生事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminChangedContext.ToQq">
+            <summary>
+            被变更的QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupAdminDisabledMahuaEvent">
+            <summary>
+            解除群管理员事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupAdminDisabledMahuaEvent.ProcessGroupAdminDisabled(Newbe.Mahua.MahuaEvents.GroupAdminDisabledContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupAdminDisabledContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminDisabledContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminDisabledContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminDisabledContext.ToQq">
+            <summary>
+            被解除管理员的QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupAdminEnabledMahuaEvent">
+            <summary>
+            任命新管理员事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupAdminEnabledMahuaEvent.ProcessGroupAdminEnabled(Newbe.Mahua.MahuaEvents.GroupAdminEnabledContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupAdminEnabledContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminEnabledContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminEnabledContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupAdminEnabledContext.ToQq">
+            <summary>
+            被任命为管理员的QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupJoiningInvitationReceivedMahuaEvent">
+            <summary>
+            入群邀请接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupJoiningInvitationReceivedMahuaEvent.ProcessJoinGroupRequest(Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="receivedContext"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.GroupJoiningInvitationId">
+            <summary>
+            入群邀请Id，用于处理此请求时的唯一Id
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.ToGroup">
+            <summary>
+            邀请进入的目标群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.FromQq">
+            <summary>
+            邀请人QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningInvitationReceivedContext.Message">
+            <summary>
+            邀请附加消息
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupJoiningRequestReceivedMahuaEvent">
+            <summary>
+            入群申请接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupJoiningRequestReceivedMahuaEvent.ProcessJoinGroupRequest(Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="receivedContext"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.GroupJoiningRequestId">
+            <summary>
+            入群申请Id，用于处理此申请的唯一Id
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.ToGroup">
+            <summary>
+            申请进入的群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.FromQq">
+            <summary>
+            申请者QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupJoiningRequestReceivedContext.Message">
+            <summary>
+            申请附加消息
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupMemberChangedMahuaEvent">
+            <summary>
+            群成员变更事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupMemberChangedMahuaEvent.ProcessGroupMemberChanged(Newbe.Mahua.MahuaEvents.GroupMemberChangedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupMemberChangedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberChangedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberChangedContext.GroupMemberChangedType">
+            <summary>
+            管理员变更类型
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberChangedContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberChangedContext.JoinedOrLeftQq">
+            <summary>
+            入群或离开的Qq
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupMemberDecreasedMahuaEvent">
+            <summary>
+            群成员减少事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupMemberDecreasedMahuaEvent.ProcessGroupMemberDecreased(Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.GroupMemberDecreasedReason">
+            <summary>
+            群成员减少原因
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.FromQq">
+            <summary>
+            若<see cref="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.GroupMemberDecreasedReason"/>为<see cref="F:Newbe.Mahua.MahuaEvents.Enums.GroupMemberDecreasedReason.Kicked"/>则此值为操作的管理员QQ，否则为null
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberDecreasedContext.ToQq">
+            <summary>
+            离开成员QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupMemberIncreasedMahuaEvent">
+            <summary>
+            群成员增多事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupMemberIncreasedMahuaEvent.ProcessGroupMemberIncreased(Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.GroupMemberIncreasedReason">
+            <summary>
+            入群原因
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.InvitatorOrAdmin">
+            <summary>
+            群员邀请者或者同意入群的管理员，取决于<see cref="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.GroupMemberIncreasedReason"/>
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMemberIncreasedContext.JoinedQq">
+            <summary>
+            已加入的QQ
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupMessageReceivedMahuaEvent">
+            <summary>
+            群消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupMessageReceivedMahuaEvent.ProcessGroupMessage(Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.FromGroup">
+            <summary>
+            消息来源群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.FromQq">
+            <summary>
+            消息发送者QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.FromAnonymous">
+            <summary>
+            匿名用户名称，非匿名发言时，该值为<see cref="F:System.String.Empty"/>
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.Message">
+            <summary>
+            群消息
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupMessageReceivedContext.MessageCancelToken">
+            <summary>
+            用于撤回消息的Token
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IGroupUploadedMahuaEvent">
+            <summary>
+            群文件上传事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IGroupUploadedMahuaEvent.ProcessGroupUploaded(Newbe.Mahua.MahuaEvents.GroupUploadedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.GroupUploadedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupUploadedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupUploadedContext.FromGroup">
+            <summary>
+            事件所属群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupUploadedContext.FromQq">
+            <summary>
+            上传者QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.GroupUploadedContext.File">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IInitializationMahuaEvent">
+            <summary>
+            插件初始化事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IInitializationMahuaEvent.Initialized(Newbe.Mahua.MahuaEvents.InitializedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.InitializedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IMahuaMenuClickedMahuaEvent">
+            <summary>
+            菜单点击事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IMahuaMenuClickedMahuaEvent.ProcessManhuaMenuClicked(Newbe.Mahua.MahuaEvents.MahuaMenuClickedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.MahuaMenuClickedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.MahuaMenuClickedContext.Menu">
+            <summary>
+            被点击的菜单
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.MahuaMenuClickedContext.ClickedTime">
+            <summary>
+            点击时间
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPlatfromExitedMahuaEvent">
+            <summary>
+            机器人平台退出事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPlatfromExitedMahuaEvent.Exited(Newbe.Mahua.MahuaEvents.PlatfromExitedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PlatfromExitedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPluginDisabledMahuaEvent">
+            <summary>
+            插件被禁用事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPluginDisabledMahuaEvent.Disable(Newbe.Mahua.MahuaEvents.PluginDisabledContext)">
+            <summary>
+            处理事件
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PluginDisabledContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPluginEnabledMahuaEvent">
+            <summary>
+            插件被启用事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPluginEnabledMahuaEvent.Enabled(Newbe.Mahua.MahuaEvents.PluginEnabledContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PluginEnabledContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPluginHotUpgradedMahuaEvent">
+            <summary>
+            插件热更新成功事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPluginHotUpgradedMahuaEvent.HotUpgraded(Newbe.Mahua.MahuaEvents.PluginHotUpgradedContext)">
+            <summary>
+            处理事件
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PluginHotUpgradedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPluginHotUpgradingMahuaEvent">
+            <summary>
+            开始插件热更新事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPluginHotUpgradingMahuaEvent.HotUpgrading(Newbe.Mahua.MahuaEvents.PluginHotUpgradingContext)">
+            <summary>
+            处理事件
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PluginHotUpgradingContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PluginHotUpgradingContext.Canceled">
+            <summary>
+            若需要取消热更新，则编辑此值为 true
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PluginHotUpgradingContext.Reason">
+            <summary>
+            取消原因，用于在日志中展示
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPrivateMessageFromDiscussReceivedMahuaEvent">
+            <summary>
+            来自讨论组成员的私聊消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPrivateMessageFromDiscussReceivedMahuaEvent.ProcessDiscussGroupMessage(Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext.FromDiscuss">
+            <summary>
+            来自讨论组
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext.FromQq">
+            <summary>
+            来自QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromDiscussReceivedContext.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPrivateMessageFromFriendReceivedMahuaEvent">
+            <summary>
+            来自好友的私聊消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPrivateMessageFromFriendReceivedMahuaEvent.ProcessFriendMessage(Newbe.Mahua.MahuaEvents.PrivateMessageFromFriendReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PrivateMessageFromFriendReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromFriendReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromFriendReceivedContext.FromQq">
+            <summary>
+            来自QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromFriendReceivedContext.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPrivateMessageFromGroupReceivedMahuaEvent">
+            <summary>
+            来自群成员的私聊消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPrivateMessageFromGroupReceivedMahuaEvent.ProcessGroupMessage(Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext.FromGroup">
+            <summary>
+            来自群
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext.FromQq">
+            <summary>
+            消息发送者
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromGroupReceivedContext.Message">
+            <summary>
+            事件内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPrivateMessageFromOnlineReceivedMahuaEvent">
+            <summary>
+            来自在线状态的私聊消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPrivateMessageFromOnlineReceivedMahuaEvent.ProcessOnlineMessage(Newbe.Mahua.MahuaEvents.PrivateMessageFromOnlineReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PrivateMessageFromOnlineReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromOnlineReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromOnlineReceivedContext.FromQq">
+            <summary>
+            来自QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageFromOnlineReceivedContext.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.IPrivateMessageReceivedMahuaEvent">
+            <summary>
+            私聊消息接收事件
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MahuaEvents.IPrivateMessageReceivedMahuaEvent.ProcessPrivateMessage(Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext)">
+            <summary>
+            处理事件
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext">
+            <summary>
+            事件上下文
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext.PrivateMessageFromType">
+            <summary>
+            私聊消息来源类型
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext.SendTime">
+            <summary>
+            事件时间
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext.FromQq">
+            <summary>
+            发送者QQ
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaEvents.PrivateMessageReceivedContext.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaGlobal">
+            <summary>
+            全局信息
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaGlobal.CurrentPlatform">
+            <summary>
+            当前机器人平台
+            </summary>
+            <exception cref="T:Newbe.Mahua.NotSupportMahuaPlatformException"></exception>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaGlobal.NotSupportedMahuaApiConvertion">
+            <summary>
+            调用不受支持的Api的行为。默认为<see cref="T:Newbe.Mahua.Internals.ThrowsNotSupportedMahuaApiConvertion`1"/>
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaGlobal.NotSupportedMessageBuilderConvertion">
+            <summary>
+            调用不受支持的MessageBuilder的行为。默认为<see cref="T:Newbe.Mahua.Internals.IgnoreNotSupportedMessageBuilderConvertion"/>
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaGlobal.DiagnosticsConvertion">
+            <summary>
+            诊断
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaGlobal.DiagnosticsConvertion.EnableDiagnostics">
+            <summary>
+            启用诊断，默认为false
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaGlobal.DefaultApiHandlerAuthorName">
+            <summary>
+            默认API的作者名称
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaGlobal.LifeTimeScopes">
+            <summary>
+            生命周期，详细见 Autofac相关文档，http://autofac.readthedocs.io/en/latest/lifetime/working-with-scopes.html
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaGlobal.LifeTimeScopes.RobotSession">
+            <summary>
+            RobotSession生命周期的范围
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaMenu.Id">
+            <summary>
+            菜单ID
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.MahuaMenu.Text">
+            <summary>
+            菜单显示名称
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaPlatform">
+            <summary>
+            机器人平台
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaPlatform.Cqp">
+            <summary>
+            酷Q
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaPlatform.Mpq">
+            <summary>
+            MyPCQQ
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaPlatform.Amanda">
+            <summary>
+            Amanda
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaPlatform.CleverQQ">
+            <summary>
+            CleverQQ
+            </summary>
+        </member>
+        <member name="F:Newbe.Mahua.MahuaPlatform.QqLight">
+            <summary>
+            QqLight
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.MahuaRobotManager">
+            <summary>
+            机器人实例管理器
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.MessageBuilderExtensions.SendPrivateMessage(Newbe.Mahua.IMahuaApi,System.String)">
+            <summary>
+            发送私聊消息
+            </summary>
+            <param name="api"></param>
+            <param name="toQq"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.MessageBuilderExtensions.SendGroupMessage(Newbe.Mahua.IMahuaApi,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="api"></param>
+            <param name="toGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.MessageBuilderExtensions.SendDiscussMessage(Newbe.Mahua.IMahuaApi,System.String)">
+            <summary>
+            发送讨论组消息
+            </summary>
+            <param name="api"></param>
+            <param name="toDiscuss"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IAt.At(System.String)">
+            <summary>
+            @某人
+            </summary>
+            <param name="qq">被@的群成员QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IAtAll.AtlAll">
+            <summary>
+            @全体成员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IBFace.BFace(System.String)">
+            <summary>
+            原创表情
+            </summary>
+            <param name="id">原创表情的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IEmoji.Emoji(System.String)">
+            <summary>
+            emoji表情
+            </summary>
+            <param name="id">emoji字符的unicode编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IFace.Face(System.String)">
+            <summary>
+             QQ表情
+            </summary>
+            <param name="id">0-170的数字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IImage.Image(System.String)">
+            <summary>
+            发送自定义图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IRecord.Record(System.String,System.Boolean)">
+            <summary>
+            发送语音
+            </summary>
+            <param name="file">音频文件名称</param>
+            <param name="magic">是否为变声</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IRecord.Record(System.String)">
+            <summary>
+            发送语音
+            </summary>
+            <param name="file">音频文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.ISFace.SFace(System.String)">
+            <summary>
+            小表情
+            </summary>
+            <param name="id">小表情的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IShake.Shake">
+            <summary>
+            戳一戳
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IText.Text(System.String)">
+            <summary>
+            文本信息
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Builders.IText.Newline">
+            <summary>
+            换行
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.Messages.CancelMessage.IMessageCancelToken">
+            <summary>
+            撤回消息使用的令牌
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.CancelMessage.IMessageCancelToken.Cancel">
+            <summary>
+            撤回该令牌对应的消息
+            </summary>
+        </member>
+        <member name="T:Newbe.Mahua.Messages.Exceptions.NotSupportedMessageBuilderException">
+            <summary>
+            不支持的消息发送形式
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IAtAllStep`1.AtlAll">
+            <summary>
+            @全体成员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IAtStep`1.At(System.String)">
+            <summary>
+            @某人
+            </summary>
+            <param name="qq">被@的群成员QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IBFaceStep`1.BFace(System.String)">
+            <summary>
+            原创表情
+            </summary>
+            <param name="id">原创表情的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IDiscussMessageDone.Done">
+            <summary>
+            完成发送
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IDiscussMessageDone.DoneWithToken">
+            <summary>
+            完成发送并返回用于撤回消息的Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IEmojiStep`1.Emoji(System.String)">
+            <summary>
+            emoji表情
+            </summary>
+            <param name="id">emoji字符的unicode编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IFaceStep`1.Face(System.String)">
+            <summary>
+             QQ表情
+            </summary>
+            <param name="id">0-170的数字</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IGroupMessageDone.Done">
+            <summary>
+            完成发送
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IGroupMessageDone.DoneWithToken">
+            <summary>
+            完成发送并返回用于撤回消息的Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IImageStep`1.Image(System.String)">
+            <summary>
+            发送自定义图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IPrivateMessageDone.Done">
+            <summary>
+            完成发送
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IPrivateMessageDone.DoneWithToken">
+            <summary>
+            完成发送并返回用于撤回消息的Token
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IRecordStep`1.Record(System.String,System.Boolean)">
+            <summary>
+            发送语音
+            </summary>
+            <param name="file">音频文件名称</param>
+            <param name="magic">是否为变声</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IRecordStep`1.Record(System.String)">
+            <summary>
+            发送语音
+            </summary>
+            <param name="file">音频文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.ISFaceStep`1.SFace(System.String)">
+            <summary>
+            小表情
+            </summary>
+            <param name="id">小表情的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.IShakeStep`1.Shake">
+            <summary>
+            戳一戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.ITextStep`1.Text(System.String)">
+            <summary>
+            文本信息
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.Messages.Steps.ITextStep`1.Newline">
+            <summary>
+            换行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.ModelWithSourceString`1">
+            <summary>
+            包含序列化后的模型的原始字符串模型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Newbe.Mahua.ModelWithSourceString`1.Model">
+            <summary>
+            转换后的模型
+            </summary>
+        </member>
+        <member name="P:Newbe.Mahua.ModelWithSourceString`1.SourceString">
+            <summary>
+            原字符串
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetBkn(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数Bkn或G_tk`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetBkn32(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数长Bkn或长G_tk`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetLongLdw(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数长Ldw`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetOnLineList">
+            <summary>
+            取得当前框架内在线可用的QQ列表`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetQQList">
+            <summary>
+            取得框架内所有QQ列表。包括未登录以及登录失败的QQ`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_SessionKey(System.String)">
+            <summary>
+            根据QQ取得对应的会话秘钥`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetClientkey(System.String)">
+            <summary>
+            取得页面登录用的Clientkey`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetLongClientkey(System.String)">
+            <summary>
+            取得页面登录用的长Clientkey`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetCookies(System.String)">
+            <summary>
+            取得页面操作用的Cookies`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_AddBkList(System.String,System.String)">
+            <summary>
+            将指定QQ列入QQ黑名单`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_ShutUP(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            禁言群成员`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号">禁言对象所在群.</param>
+            <param name="QQ">禁言对象.留空为全群禁言</param>
+            <param name="时长">单位:秒 最大为1个月. 为零解除对象或全群禁言</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_PBGroupNotic(System.String,System.String,System.String,System.String)">
+            <summary>
+            发群公告`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="标题"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetGroupCard(System.String,System.String,System.String)">
+            <summary>
+            取群名片`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_SetGroupCard(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置群名片`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="QQ"></param>
+            <param name="名片"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_QuitDisGroup(System.String,System.String)">
+            <summary>
+            退出讨论组`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_DelFriend(System.String,System.String)">
+            <summary>
+            删除好友`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_KickGroupMBR(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            将对象移除群`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="对象"></param>
+            <param name="不再接收加群请求">真为不再接收，假为接收</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_JoinGroup(System.String,System.String,System.String)">
+            <summary>
+            主动加群.为了避免广告、群发行为。出现验证码时将会直接失败不处理`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="附加理由"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_QuitGroup(System.String,System.String)">
+            <summary>
+            退出群`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_UpLoadPic(System.String,System.Int32,System.String,System.Byte[])">
+            <summary>
+            返回值:成功返回图片GUID用于发送该图片.失败返回空.  图片尺寸应小于4MB`
+            </summary>
+            <param name="响应的QQ">机器人QQ</param>
+            <param name="参_上传类型">1好友2群 注:好友图和群图的GUID并不相同并不通用 需要非别上传。群、讨论组用类型2 临时会话、好友信息需要类型1</param>
+            <param name="参_参考对象">上传该图片所属的群号或QQ</param>
+            <param name="参_图片数据">址, 图片字节集数据或字节集数据指针()</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetPicLink(System.String,System.Int32,System.String,System.String)">
+             <summary>
+             根据图片GUID取得图片下载连接 失败返回空`
+             </summary>
+            <param name="响应的QQ">机器人QQ</param>
+            <param name="图片类型">图片类型</param> 1 群 讨论组  2临时会话和好友
+            <param name="参考对象">参考对象</param> 图片所属对应的群号（可随意乱填写，只有群图片需要填写）
+            <param name="图片GUID">图片GUID</param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_SendMsg(System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            向对象、目标发送信息 支持好友 群 讨论组 群临时会话 讨论组临时会话`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="信息类型">1好友 2群 3讨论组 4群临时会话 5讨论组临时会话</param>
+            <param name="收信群_讨论组">发送群信息、讨论组信息、群临时会话信息、讨论组临时会话信息时填写</param>
+            <param name="收信对象">最终接收这条信息的对象QQ</param>
+            <param name="内容">信息内容</param>
+            <param name="气泡ID">气泡ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_OutPutLog(System.String)">
+            <summary>
+            在框架记录页输出一行信息`
+            </summary>
+            <param name="内容">输出的内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_IsEnable">
+            <summary>
+            取得本插件启用状态`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_LoginQQ(System.String)">
+            <summary>
+            登录一个现存的QQ`
+            </summary>
+            <param name="QQ">欲登录的Q</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_OffLineQQ(System.String)">
+            <summary>
+            让指定QQ下线`
+            </summary>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_Tea加密(System.String,System.String)">
+            <summary>
+            tean加密算法`
+            </summary>
+            <param name="加密内容"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_Tea解密(System.String,System.String)">
+            <summary>
+            tean解密算法`
+            </summary>
+            <param name="解密内容"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetRInf(System.String)">
+            <summary>
+            取用户名`
+            </summary>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GNTransGID(System.String)">
+            <summary>
+            群号转群ID`
+            </summary>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GIDTransGN(System.String)">
+            <summary>
+            群ID转群号`
+            </summary>
+            <param name="群ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetVer">
+            <summary>
+            取框架版本名`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetTimeStamp">
+            <summary>
+            取当前框架内部时间戳_周期性与服务器时间同步`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetLog">
+            <summary>
+            取得框架输出列表内所有信息`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetGroupAdmin(System.String,System.String)">
+            <summary>
+            取包括群主在内的群管列表`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_PBTaoTao(System.String,System.String)">
+            <summary>
+            发说说`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_SignIn(System.String,System.String,System.String,System.String)">
+            <summary>
+            QQ群签到（成功返回真 失败返回假）
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="地名">签到地名（Pro可自定义）</param>
+            <param name="想说的话">想发表的内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetGroupList(System.String)">
+            <summary>
+            通过qun.qzone.qq.com接口取得取群列表.成功返回转码后的JSON格式文本信息`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetGroupMemberList(System.String,System.String)">
+            <summary>
+            通过qun.qq.com接口取得群成员列表 成功返回转码后的JSON格式文本`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetFriendList(System.String)">
+            <summary>
+            通过qun.qq.com接口取得好友列表。成功返回转码后的JSON文本`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetQQAge(System.String,System.String)">
+            <summary>
+            取Q龄 成功返回Q龄 失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetAge(System.String,System.String)">
+            <summary>
+            取年龄 成功返回年龄 失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetPerExp(System.String,System.String)">
+            <summary>
+            取个人说明`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ">对象QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetEmail(System.String,System.String)">
+            <summary>
+            取邮箱 成功返回邮箱 失败返回空`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetGender(System.String,System.String)">
+            <summary>
+            取对象性别 1男 2女  未或失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_ShakeWindow(System.String,System.String)">
+            <summary>
+            向好友发送窗口抖动信息`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_AddQQ(System.String,System.String,System.Boolean)">
+            <summary>
+            往帐号列表添加一个Q.当该Q已存在时则覆盖密码`
+            </summary>
+            <param name="QQ"></param>
+            <param name="密码"></param>
+            <param name="自动登录">运行框架时是否自动登录该Q.若添加后需要登录该Q则需要通过Api_Login操作</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_SetRInf(System.String,System.Int32,System.String)">
+            <summary>
+            设置在线状态+附加信息 `
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="在线状态">1~6 分别对应我在线上, Q我吧, 离开, 忙碌, 请勿打扰, 隐身</param>
+            <param name="状态附加信息">最大255字节</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_NoAdminInviteGroup(System.String,System.String,System.String)">
+            <summary>
+            邀请对象加入群 失败返回错误理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="好友QQ">多个好友用换行分割</param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_CreateDisGroup(System.String,System.String)">
+            <summary>
+            创建一个讨论组 成功返回讨论组ID 失败返回空 注:每24小时只能创建100个讨论组 悠着点用`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组名称">讨论组名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_KickDisGroupMBR(System.String,System.String,System.String)">
+            <summary>
+            将对象移除讨论组.成功返回空 失败返回理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <param name="成员"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_InviteDisGroup(System.String,System.String,System.String)">
+            <summary>
+            邀请对象加入讨论组 成功返回空 失败返回理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <param name="成员组">多个成员用换行符分割</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_GetDisGroupList(System.String)">
+            <summary>
+            成功返回以换行符分割的讨论组号列表.最大为100个讨论组  失败返回空`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICleverQqApi.Api_IfFriend(System.String,System.String)">
+            <summary>
+            判断对象是否为好友（双向）`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="对象QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_deleteMsg(System.Int32,System.Int64)">
+            <summary>
+            撤回消息
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="msgid">消息ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_sendPrivateMsg(System.Int32,System.Int64,System.String)">
+            <summary>
+            发送好友消息
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="QQID">目标QQ</param>
+            <param name="msg">消息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_sendGroupMsg(System.Int32,System.Int64,System.String)">
+            <summary>
+            发送群消息
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="msg">消息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_sendDiscussMsg(System.Int32,System.Int64,System.String)">
+            <summary>
+            发送讨论组消息
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="讨论组号">目标讨论组</param>
+            <param name="msg">消息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_sendLike(System.Int32,System.Int64)">
+            <summary>
+            发送赞
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="QQID">目标QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_sendLikeV2(System.Int32,System.Int64,System.Int32)">
+            <summary>
+            发送赞
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="QQID">目标QQ</param>
+            <param name="times">赞的次数，最多10次</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getCookies(System.Int32)">
+            <summary>
+            取Cookies(慎用
+            </summary>
+            <param name="AuthCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getRecord(System.Int32,System.String,System.String)">
+            <summary>
+            接收语音
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="file">收到消息中的语音文件名(file)</param>
+            <param name="outformat">应用所需的格式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getCsrfToken(System.Int32)">
+            <summary>
+            取CsrfToken(慎用
+            </summary>
+            <param name="AuthCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getAppDirectory(System.Int32)">
+            <summary>
+            取应用目录
+            </summary>
+            <param name="AuthCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getLoginQQ(System.Int32)">
+            <summary>
+            取登录QQ
+            </summary>
+            <param name="AuthCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getLoginNick(System.Int32)">
+            <summary>
+            取登录昵称
+            </summary>
+            <param name="AuthCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupKick(System.Int32,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            置群员移除
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="QQID">目标QQ</param>
+            <param name="拒绝再加群">如果为真，则“不再接收此人加群申请”，请慎用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupBan(System.Int32,System.Int64,System.Int64,System.Int64)">
+            <summary>
+            置群员禁言
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="QQID">目标QQ</param>
+            <param name="禁言时间">禁言的时间，单位为秒。如果要解禁，这里填写0</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupAdmin(System.Int32,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            置群管理员
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="QQID">被设置的QQ</param>
+            <param name="成为管理员">真/设置管理员 假/取消管理员</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupSpecialTitle(System.Int32,System.Int64,System.Int64,System.String,System.Int64)">
+            <summary>
+            置群成员专属头衔
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="QQID">目标QQ</param>
+            <param name="头衔">如果要删除，这里填空</param>
+            <param name="过期时间">专属头衔有效期，单位为秒。如果永久有效，这里填写-1</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupWholeBan(System.Int32,System.Int64,System.Boolean)">
+            <summary>
+            置全群禁言
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="开启禁言">真/开启 假/关闭</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupAnonymousBan(System.Int32,System.Int64,System.String,System.Int64)">
+            <summary>
+            置匿名群员禁言
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="匿名">群消息事件收到的“匿名”参数</param>
+            <param name="禁言时间">禁言的时间，单位为秒。不支持解禁</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupAnonymous(System.Int32,System.Int64,System.Boolean)">
+            <summary>
+            置群匿名设置
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号"></param>
+            <param name="开启匿名"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupCard(System.Int32,System.Int64,System.Int64,System.String)">
+            <summary>
+            置群成员名片
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="QQID">被设置的QQ</param>
+            <param name="新名片_昵称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupLeave(System.Int32,System.Int64,System.Boolean)">
+            <summary>
+            置群退出
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标群</param>
+            <param name="是否解散">真/解散本群(群主) 假/退出本群(管理、群成员)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setDiscussLeave(System.Int32,System.Int64)">
+            <summary>
+            置讨论组退出
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="讨论组号">目标讨论组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setFriendAddRequest(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            置好友添加请求
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="请求反馈标识">请求事件收到的“反馈标识”参数</param>
+            <param name="反馈类型">#请求_通过 或 #请求_拒绝</param>
+            <param name="备注">添加后的好友备注</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupAddRequest(System.Int32,System.String,System.Int32,System.Int32)">
+            <summary>
+            置群添加请求
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="请求反馈标识">请求事件收到的“反馈标识”参数</param>
+            <param name="请求类型">根据请求事件的子类型区分 #请求_群添加 或 #请求_群邀请</param>
+            <param name="反馈类型">#请求_通过 或 #请求_拒绝</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setGroupAddRequestV2(System.Int32,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            置群添加请求
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="请求反馈标识">请求事件收到的“反馈标识”参数</param>
+            <param name="请求类型">根据请求事件的子类型区分 #请求_群添加 或 #请求_群邀请</param>
+            <param name="反馈类型">#请求_通过 或 #请求_拒绝</param>
+            <param name="理由">操作理由，仅 #请求_群添加 且 #请求_拒绝 时可用</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_addLog(System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            增加运行日志
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="优先级">#Log_ 开头常量</param>
+            <param name="类型"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_setFatal(System.Int32,System.String)">
+            <summary>
+            置致命错误提示
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="错误信息"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getGroupMemberInfo(System.Int32,System.Int64,System.Int64)">
+            <summary>
+            取群成员信息(旧版
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标QQ所在群</param>
+            <param name="QQID">目标QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getGroupMemberInfoV2(System.Int32,System.Int64,System.Int64,System.Boolean)">
+            <summary>
+            取群成员信息(支持缓存)
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标QQ所在群</param>
+            <param name="QQID">目标QQ</param>
+            <param name="不使用缓存"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getGroupMemberList(System.Int32,System.Int64)">
+            <summary>
+            取群成员列表
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="群号">目标QQ所在群</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getStrangerInfo(System.Int32,System.Int64,System.Boolean)">
+            <summary>
+            取陌生人信息(支持缓存)
+            </summary>
+            <param name="AuthCode"></param>
+            <param name="QQID">目标QQ</param>
+            <param name="不使用缓存"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.ICoolQApi.CQ_getGroupList(System.Int32)">
+            <summary>
+            取群列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGtk_Bkn(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数Bkn或G_tk`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetBkn32(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数长Bkn或长G_tk`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetLdw(System.String)">
+            <summary>
+            根据提交的QQ号计算得到页面操作用参数长Ldw`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetRunPath">
+            <summary>
+            取得框架所在目录.可能鸡肋了。`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetOnlineQQlist">
+            <summary>
+            取得当前框架内在线可用的QQ列表`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetQQlist">
+            <summary>
+            取得框架内所有QQ列表。包括未登录以及登录失败的QQ`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetSessionkey(System.String)">
+            <summary>
+            根据QQ取得对应的会话秘钥`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetClientkey(System.String)">
+            <summary>
+            取得页面登录用的Clientkey`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetLongClientkey(System.String)">
+            <summary>
+            取得页面登录用的长Clientkey`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetCookies(System.String)">
+            <summary>
+            取得页面操作用的Cookies`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetPrefix">
+            <summary>
+            取得框架内设置的信息发送前缀`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Cache_NameCard(System.String,System.String,System.String)">
+            <summary>
+            将群名片加入高速缓存当作.`
+            </summary>
+            <param name="群号"></param>
+            <param name="QQ"></param>
+            <param name="名片"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_DBan(System.String,System.String)">
+            <summary>
+            将指定QQ移出QQ黑名单`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Ban(System.String,System.String)">
+            <summary>
+            将指定QQ列入QQ黑名单`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Shutup(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            禁言群成员`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号">禁言对象所在群.</param>
+            <param name="QQ">禁言对象.留空为全群禁言</param>
+            <param name="时长">单位:秒 最大为1个月. 为零解除对象或全群禁言</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SetNotice(System.String,System.String,System.String,System.String)">
+            <summary>
+            发群公告`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="标题"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetNotice(System.String,System.String)">
+            <summary>
+            取群公告`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetNameCard(System.String,System.String,System.String)">
+            <summary>
+            取群名片`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SetNameCard(System.String,System.String,System.String,System.String)">
+            <summary>
+            设置群名片`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="QQ"></param>
+            <param name="名片"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_QuitDG(System.String,System.String)">
+            <summary>
+            退出讨论组`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_DelFriend(System.String,System.String)">
+            <summary>
+            删除好友`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Kick(System.String,System.String,System.String)">
+            <summary>
+            将对象移除群`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="对象"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_JoinGroup(System.String,System.String,System.String)">
+            <summary>
+            主动加群.为了避免广告、群发行为。出现验证码时将会直接失败不处理`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <param name="附加理由"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_QuitGroup(System.String,System.String)">
+            <summary>
+            退出群`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_UploadPic(System.String,System.Int32,System.String,System.Byte[])">
+            <summary>
+            返回值:成功返回图片GUID用于发送该图片.失败返回空.  图片尺寸应小于4MB`
+            </summary>
+            <param name="响应的QQ">机器人QQ</param>
+            <param name="参_上传类型">1好友2群 注:好友图和群图的GUID并不相同并不通用 需要非别上传。群、讨论组用类型2 临时会话、好友信息需要类型1</param>
+            <param name="参_参考对象">上传该图片所属的群号或QQ</param>
+            <param name="参_图片数据">址, 图片字节集数据或字节集数据指针()</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GuidGetPicLink(System.String)">
+            <summary>
+            根据图片GUID取得图片下载连接 失败返回空`
+            </summary>
+            <param name="图片GUID">{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}.jpg这样的GUID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Reply(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            回复信息 请尽量避免使用该API`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="信息类型">1好友 2群 3讨论组 4群临时会话 5讨论组临时会话</param>
+            <param name="回复对象">接收这条信息的对象</param>
+            <param name="内容">信息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SendMsg(System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            向对象、目标发送信息 支持好友 群 讨论组 群临时会话 讨论组临时会话`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="信息类型">1好友 2群 3讨论组 4群临时会话 5讨论组临时会话</param>
+            <param name="参考子类型">无特殊说明情况下留空或填零</param>
+            <param name="收信群_讨论组">发送群信息、讨论组信息、群临时会话信息、讨论组临时会话信息时填写</param>
+            <param name="收信对象">最终接收这条信息的对象QQ</param>
+            <param name="内容">信息内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Send(System.String)">
+            <summary>
+            发送封包`
+            </summary>
+            <param name="封包内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_OutPut(System.String)">
+            <summary>
+            在框架记录页输出一行信息`
+            </summary>
+            <param name="内容">输出的内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_IsEnable">
+            <summary>
+            取得本插件启用状态`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Login(System.String)">
+            <summary>
+            登录一个现存的QQ`
+            </summary>
+            <param name="QQ">欲登录的Q</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Logout(System.String)">
+            <summary>
+            让指定QQ下线`
+            </summary>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Tea加密(System.String,System.String)">
+            <summary>
+            tean加密算法`
+            </summary>
+            <param name="加密内容"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_Tea解密(System.String,System.String)">
+            <summary>
+            tean解密算法`
+            </summary>
+            <param name="解密内容"></param>
+            <param name="Key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetNick(System.String)">
+            <summary>
+            取用户名`
+            </summary>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetQQLevel(System.String)">
+            <summary>
+            取QQ等级+QQ会员等级 返回json格式信息`
+            </summary>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GNGetGid(System.String)">
+            <summary>
+            群号转群ID`
+            </summary>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GidGetGN(System.String)">
+            <summary>
+            群ID转群号`
+            </summary>
+            <param name="群ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetVersion">
+            <summary>
+            取框架版本号(发布时间戳`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetVersionName">
+            <summary>
+            取框架版本名`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetTimeStamp">
+            <summary>
+            取当前框架内部时间戳_周期性与服务器时间同步`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetLog">
+            <summary>
+            取得框架输出列表内所有信息`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_IfBlock(System.String)">
+            <summary>
+            判断是否处于被屏蔽群信息状态。`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetAdminList(System.String,System.String)">
+            <summary>
+            取包括群主在内的群管列表`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_AddTaotao(System.String,System.String)">
+            <summary>
+            发说说`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetSign(System.String,System.String)">
+            <summary>
+            取个签`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="对象"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SetSign(System.String,System.String)">
+            <summary>
+            设置个签`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGroupListA(System.String)">
+            <summary>
+            通过qun.qzone.qq.com接口取得取群列表.成功返回转码后的JSON格式文本信息`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGroupListB(System.String)">
+            <summary>
+            通过qun.qq.com接口取得取群列表.成功返回转码后的JSON格式文本信息`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGroupMemberA(System.String,System.String)">
+            <summary>
+            通过qun.qq.com接口取得群成员列表 成功返回转码后的JSON格式文本`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGroupMemberB(System.String,System.String)">
+            <summary>
+            通过qun.qzone.qq.com接口取得群成员列表 成功返回转码后的JSON格式文本`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetFriendList(System.String)">
+            <summary>
+            通过qun.qq.com接口取得好友列表。成功返回转码后的JSON文本`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetQQAge(System.String,System.String)">
+            <summary>
+            取Q龄 成功返回Q龄 失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetAge(System.String,System.String)">
+            <summary>
+            取年龄 成功返回年龄 失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetPersonalProfile(System.String,System.String)">
+            <summary>
+            取个人说明`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ">对象QQ</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetEmail(System.String,System.String)">
+            <summary>
+            取邮箱 成功返回邮箱 失败返回空`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetGender(System.String,System.String)">
+            <summary>
+            取对象性别 1男 2女  未或失败返回-1`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SendTyping(System.String,System.String)">
+            <summary>
+            向好友发送‘正在输入’的状态信息.当好友收到信息之后 “正在输入”状态会立刻被打断`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SendShake(System.String,System.String)">
+            <summary>
+            向好友发送窗口抖动信息`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetRadomOnlineQQ">
+            <summary>
+            取得框架内随机一个在线且可以使用的QQ`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_AddQQ(System.String,System.String,System.Boolean)">
+            <summary>
+            往帐号列表添加一个Q.当该Q已存在时则覆盖密码`
+            </summary>
+            <param name="QQ"></param>
+            <param name="密码"></param>
+            <param name="自动登录">运行框架时是否自动登录该Q.若添加后需要登录该Q则需要通过Api_Login操作</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SetOLStatus(System.String,System.Int32,System.String)">
+            <summary>
+            设置在线状态+附加信息 `
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="在线状态">1~6 分别对应我在线上, Q我吧, 离开, 忙碌, 请勿打扰, 隐身</param>
+            <param name="状态附加信息">最大255字节</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetMC">
+            <summary>
+            取得机器码`
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GroupInvitation(System.String,System.String,System.String)">
+            <summary>
+            邀请对象加入群 失败返回错误理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="好友QQ">多个好友用换行分割</param>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_CreateDG(System.String)">
+            <summary>
+            创建一个讨论组 成功返回讨论组ID 失败返回空 注:每24小时只能创建100个讨论组 悠着点用`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_KickDG(System.String,System.String,System.String)">
+            <summary>
+            将对象移除讨论组.成功返回空 失败返回理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <param name="成员"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_DGInvitation(System.String,System.String,System.String)">
+            <summary>
+            邀请对象加入讨论组 成功返回空 失败返回理由`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="讨论组ID"></param>
+            <param name="成员组">多个成员用换行符分割</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_GetDGList(System.String)">
+            <summary>
+            成功返回以换行符分割的讨论组号列表.最大为100个讨论组  失败返回空`
+            </summary>
+            <param name="响应的QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SendMusic(System.String,System.Int32,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            向对象发送一条音乐信息（所谓的点歌）次数不限`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="收信对象类型">同Api_SendMsg  1好友 2群 3讨论组 4群临时会话 5讨论组临时会话</param>
+            <param name="收信对象所属群_讨论组">发群内、临时会话必填 好友可不填</param>
+            <param name="收信对象QQ">临时会话、好友必填 发至群内可不填</param>
+            <param name="音乐简介">留空默认‘QQ音乐 的分享’</param>
+            <param name="音乐播放页面连接">任意直连或短链接均可 留空为空 无法点开</param>
+            <param name="音乐封面连接">任意直连或短链接均可 可空 例:http://url.cn/cDiJT4</param>
+            <param name="音乐文件直连连接">任意直连或短链接均可 不可空 例:http://url.cn/djwXjr</param>
+            <param name="曲名">可空</param>
+            <param name="歌手名">可空</param>
+            <param name="音乐来源名">可空 为空默认QQ音乐</param>
+            <param name="音乐来源图标连接">可空 为空默认QQ音乐 http://qzonestyle.gtimg.cn/ac/qzone/applogo/64/308/100497308_64.gif</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_SendObjectMsg(System.String,System.Int32,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            `
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="收信对象类型">同Api_SendMsg  1好友 2群 3讨论组 4群临时会话 5讨论组临时会话</param>
+            <param name="收信对象所属群_讨论组">发群内、临时会话必填 好友可不填</param>
+            <param name="收信对象QQ">临时会话、好友必填 发至群内可不填</param>
+            <param name="ObjectMsg"></param>
+            <param name="结构子类型">00 基本 02 点歌 其他不明</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IMpqApi.Api_IsFriend(System.String,System.String)">
+            <summary>
+            判断对象是否为好友（双向）`
+            </summary>
+            <param name="响应的QQ"></param>
+            <param name="对象QQ"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_DeleteMsg(System.String,System.String)">
+            <summary>
+            撤回消息
+            </summary>
+            <param name="群号"></param>
+            <param name="消息ID"></param>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SendPraise(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="QQ号"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SendShake(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="QQ号"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_Getbkn">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_QuitGroup(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_QuitDiscussGroup(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="讨论组号"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetSignature(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="个性签名"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetDiscussName(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="讨论组号"></param>
+             <param name="名称"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_BanGroup(System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="是否全群禁言"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_RemoveGroup(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetManager(System.String,System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="QQ号"></param>
+             <param name="是否设置为管理员">真,设置  假,取消</param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_Ban(System.String,System.String,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="QQ"></param>
+             <param name="禁言时长">单位:秒  0为解除禁言</param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetAnony(System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="是否允许匿名聊天"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_RemoveMember(System.String,System.String,System.Boolean)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="QQ号"></param>
+             <param name="是否不再接收加群申请"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetCookies">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetLoginQQ">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetPluginState">
+            <summary>
+            是否开启/关闭
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetPath">
+            <summary>
+            框架为插件所创建的一个目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SendMsg(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            机器人发送消息
+            </summary>
+            <param name="类型">1.好友消息 2.群消息 3.群临时消息 4.讨论组消息 5.讨论组临时消息</param>
+            <param name="群组">类型不为1时为群号/讨论组号  类型为1时可留空</param>
+            <param name="QQ号">类型为2，4时可留空</param>
+            <param name="内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetGroupAdd(System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            处理加群消息
+            </summary>
+            <param name="群号"></param>
+            <param name="QQ号"></param>
+            <param name="Seq"></param>
+            <param name="操作方式">1.同意 2.拒绝 3.忽略</param>
+            <param name="拒绝理由">参数可为空，且为 拒绝 时有效</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetFriendAdd(System.String,System.Int32,System.String)">
+            <summary>
+            处理加好友消息
+            </summary>
+            <param name="QQ号"></param>
+            <param name="操作方式">1.同意 2.拒绝 3.忽略</param>
+            <param name="拒绝理由">参数可为空，且为 拒绝 时有效</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SendLog(System.String,System.String,System.Int32)">
+             <summary>
+            
+             </summary>
+             <param name="类型"></param>
+             <param name="内容"></param>
+             <param name="字体颜色"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetFriendName(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="好友QQ"></param>
+             <param name="备注名"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_DeleteFriend(System.String)">
+             <summary>
+            
+             </summary>
+             <param name="好友QQ"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_AddGroup(System.String,System.String)">
+             <summary>
+            
+             </summary>
+             <param name="群号"></param>
+             <param name="附加信息"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_163Music(System.String)">
+            <summary>
+            返回网易云点歌XML
+            </summary>
+            <param name="歌曲ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_QQMusic(System.String)">
+            <summary>
+            返回QQ点歌XML
+            </summary>
+            <param name="歌曲ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_JsonMusic(System.String)">
+            <summary>
+            返回Json点歌XML
+            </summary>
+            <param name="歌曲ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_Error(System.String,System.String)">
+            <summary>
+            置插件错误管理
+            </summary>
+            <param name="Code"></param>
+            <param name="Str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetGroupCard(System.String,System.String)">
+            <summary>
+            取得群内成员的名片
+            </summary>
+            <param name="群号"></param>
+            <param name="QQ号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetNick(System.String)">
+            <summary>
+            取得某个QQ的昵称
+            </summary>
+            <param name="QQ号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetGroupCard(System.String,System.String,System.String)">
+            <summary>
+            修改群内成员的名片
+            </summary>
+            <param name="群号"></param>
+            <param name="QQ号"></param>
+            <param name="新名片"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetPraiseNum(System.String)">
+            <summary>
+            取得某个QQ的名片赞数量
+            </summary>
+            <param name="QQ号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetFriendList">
+            <summary>
+            以JSON形式取得好友列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetGroupList">
+            <summary>
+            以JSON形式取得群列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_GetGroupMemberList(System.String)">
+            <summary>
+            以JSON形式取得群成员列表
+            </summary>
+            <param name="群号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.NativeApi.IQqLightApi.Api_SetQQState(System.Int32)">
+            <summary>
+            改变QQ在线状态
+            </summary>
+            <param name="类型">1.我在线上 2.Q我吧 3.离开 4.忙碌 5.请勿打扰 6.隐身</param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.NotSupportMahuaPlatformException">
+            <summary>
+            不受支持的机器人平台
+            </summary>
+        </member>
+    </members>
+</doc>
