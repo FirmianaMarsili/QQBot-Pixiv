@@ -236,7 +236,7 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
 
         private static bool ImageSize(JToken size)
         {
-            bool flag = (int)size / 1024f >= 4;
+            bool flag = (int)size / (1024f * 1024f) >= 4;
             return flag;
         }
 
