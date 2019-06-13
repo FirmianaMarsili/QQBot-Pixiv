@@ -265,14 +265,14 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
                         for (int i = 0; i < jd.Count; i++)
                         {
                             bool flag = ImageSize(jd[i]["jpeg_file_size"]);
-                            if (flag)
+                            if (!flag)
                             {
                                 imageUrl.Add(jd[i]["jpeg_url"].ToString());
                             }
                             else
                             {
                                 bool flag1 = ImageSize(jd[i]["sample_file_size"]);
-                                if (flag1)
+                                if (!flag1)
                                 {
                                     imageUrl.Add(jd[i]["sample_url"].ToString());
                                 }
