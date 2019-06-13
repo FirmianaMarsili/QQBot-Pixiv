@@ -20,7 +20,7 @@ namespace Newbe.Mahua.Plugins.yande.MahuaEvents
 
         public void ProcessGroupMessage(GroupMessageReceivedContext context)
         {
-            if (context.Message.Contains("嬲"))
+            if (context.Message.Contains("嬲") || context.Message.Contains("女管理") || context.Message.Contains("幼稚") || context.Message.Contains("东东") || context.Message.Contains("冬冬"))
             {
                 bool flag = false;
                 TimeSpan time = DateTime.Now - Helper.dateTimeCD;
