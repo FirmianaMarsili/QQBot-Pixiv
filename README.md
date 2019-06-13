@@ -39,7 +39,7 @@
 获取[yande](https://yande.re/post)里自定义搜索的图片
 
 ## How To Use:
-照旧<br>文件生成在D:/yande下
+照旧<br>文件生成在D:/yande下<br>发送的时间会很长,可以考虑下载到本地然后像pixiv一样发送
 
 # PS:
 
