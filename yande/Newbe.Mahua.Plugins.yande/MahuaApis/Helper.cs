@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
     public class Helper
     {
         private static string file = "D:\\yande\\page.txt";
-        private static string error_File = "D:\\yande\\error.txt";
+        public static string error_File = "D:\\yande\\error.txt";
         private static int _currentPage;
         public static int currentPage
         {
@@ -182,7 +183,7 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
         public static DateTime dateTimeCD = DateTime.Now;
         public static double timeCD = 8;
 
-        private static int score = 20; //搜索最低评分
+        private static int score = 40; //搜索最低评分
         private static int limit = 64; //每页最多图片
         private static string order = "score"; //排序规则
 
@@ -244,11 +245,62 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
         {
             bool flag_InitIndex = imageUrl.Count == 0 && currentIndex != 0;
             loading = true;
-            using (WebClient www = new WebClient())
+
+            try
             {
-                www.Encoding = Encoding.UTF8; //我嬲
-                string str = www.DownloadString(url);
-                if (string.IsNullOrEmpty(str) || str == "[]")
+                bool flag = imageUrl.Count == 0 && currentIndex != 0;
+                loading = true;
+                string result = string.Empty;
+                //IWebProxy proxy = GetProxy();
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                request.Timeout = 10000;
+                request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3";
+                request.ServicePoint.Expect100Continue = false;
+                request.ServicePoint.UseNagleAlgorithm = false;
+                request.AllowWriteStreamBuffering = false;
+                request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip,deflate, br");
+                request.ContentType = "application/json; charset=utf-8";
+                request.AllowAutoRedirect = false;
+                request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.80 Safari/537.36";
+                request.KeepAlive = true;
+                request.Method = "GET";
+                request.Headers[HttpRequestHeader.Cookie] = "PHPSESSID=k61pcs2o2lkn4n9gfkjqlmm2i4; theme=black";
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    if (response.ContentEncoding.ToLower().Contains("gzip"))//解压
+                    {
+                        using (GZipStream stream = new GZipStream(response.GetResponseStream(), CompressionMode.Decompress))
+                        {
+                            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                            {
+                                result = reader.ReadToEnd();
+                            }
+                        }
+                    }
+                    else if (response.ContentEncoding.ToLower().Contains("deflate"))//解压
+                    {
+                        using (DeflateStream stream = new DeflateStream(response.GetResponseStream(), CompressionMode.Decompress))
+                        {
+                            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                            {
+                                result = reader.ReadToEnd();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        using (Stream stream = response.GetResponseStream())//原始
+                        {
+                            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+                            {
+                                result = reader.ReadToEnd();
+                            }
+                        }
+                    }
+                }
+                request.Abort();
+
+                if (string.IsNullOrEmpty(result) || result == "[]")
                 {
                     //进行前一天
                     currentDateTime = currentDateTime.AddDays(-1);
@@ -256,27 +308,27 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
                     GET();
                 }
                 else
-                {         
-                    JArray jd = JArray.Parse(str);
+                {
+                    JArray jd = JArray.Parse(result);
 
                     lock (imageUrl)
                     {
                         imageUrl.Clear();
                         for (int i = 0; i < jd.Count; i++)
                         {
-                            bool flag = ImageSize(jd[i]["jpeg_file_size"]);
-                            if (!flag)
+                            //bool flag = ImageSize(jd[i]["jpeg_file_size"]);
+                            //if (!flag)
+                            //{
+                            //    imageUrl.Add(jd[i]["jpeg_url"].ToString());
+                            //}
+                            //else
+                            //{
+                            bool flag1 = ImageSize(jd[i]["sample_file_size"]);
+                            if (!flag1)
                             {
-                                imageUrl.Add(jd[i]["jpeg_url"].ToString());
+                                imageUrl.Add(jd[i]["sample_url"].ToString());
                             }
-                            else
-                            {
-                                bool flag1 = ImageSize(jd[i]["sample_file_size"]);
-                                if (!flag1)
-                                {
-                                    imageUrl.Add(jd[i]["sample_url"].ToString());
-                                }
-                            }
+                            //}
                         }
                         if (!flag_InitIndex)
                         {
@@ -287,7 +339,13 @@ namespace Newbe.Mahua.Plugins.yande.MahuaApis
                     loading = false;
 
                 }
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                WriteError(ex.ToString());
+                GET();
+                //throw;
             }
         }
 
