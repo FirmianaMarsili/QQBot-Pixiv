@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Newbe.Mahua.CQP</name>
+    </assembly>
+    <members>
+        <member name="M:Newbe.Mahua.CQP.GroupMemberInfoSerializer.ConvertAnsiHexToGroupMemberInfo(System.Byte[],Newbe.Mahua.GroupMemberInfo@)">
+            <summary>
+            转换_ansihex到群成员信息
+            </summary>
+            <param name="source">源字节集</param>
+            <param name="gm">群成员</param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.GroupMemberInfoSerializer.ConvertStrToGroupMemberInfos(System.String,System.Collections.Generic.List{Newbe.Mahua.GroupMemberInfo}@)">
+            <summary>
+            转换_文本到群成员列表信息
+            </summary>
+            <param name="source">源</param>
+            <param name="lsGm">群成员列表</param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.CQP.IGroupInfoSerializer">
+            <summary>
+            群信息序列化
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.IGroupInfoSerializer.DeserializeGroupInfos(System.String)">
+            <summary>
+            将特定的字符串反序列化为<see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.CQP.IGroupMemberInfoSerializer">
+            <summary>
+            成员信息序列化
+            </summary>
+            <remarks>该结构根据不同的<see cref="T:Newbe.Mahua.MahuaPlatform"/>需要进行专用化开发</remarks>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.IGroupMemberInfoSerializer.DeserializeGroupMemberInfos(System.String)">
+            <summary>
+            将特定的字符串反序列化为<see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+            <param name="sourceStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Newbe.Mahua.CQP.Internals.DataConvertExtensions">
+            <summary>
+            Base64编码解码
+            </summary>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Internals.DataConvertExtensions.Base64(System.Byte[])">
+            <summary>
+            Base64编码
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Internals.DataConvertExtensions.DeBase64(System.String)">
+            <summary>
+            Base64解码
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Internals.DataConvertExtensions.ByteToHex(System.Byte[],System.String)">
+            <summary>
+            将字节数组转换为HEX形式的字符串, 使用指定的间隔符
+            </summary>
+            <param name="buf"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Internals.DataConvertExtensions.SubArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            从此实例检索子数组
+            </summary>
+            <param name="source">要检索的数组</param>
+            <param name="startIndex">起始索引号</param>
+            <param name="length">检索最大长度</param>
+            <returns>与此实例中在 startIndex 处开头、长度为 length 的子数组等效的一个数组</returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Internals.DataConvertExtensions.Flip(System.String,System.Int32)">
+            <summary>
+            翻转字符串
+            </summary>
+            <param name="str"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Messages.Builders.CqpMessageBuilder.BFace(System.String)">
+            <summary>
+            {1}为该原创表情的ID，存放在酷Q目录的data\bface\下
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Messages.Builders.CqpMessageBuilder.Image(System.String)">
+            <summary>
+            {1}为图片文件名称，图片存放在酷Q目录的data\image\下
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Messages.Builders.CqpMessageBuilder.Record(System.String)">
+            <summary>
+            {1}为语音文件名称，语音存放在酷Q目录的data\record\下
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:Newbe.Mahua.CQP.Messages.Builders.CqpMessageBuilder.Record(System.String,System.Boolean)">
+            <summary>
+            {1}为语音文件名称，语音存放在酷Q目录的data\record\下
+            {2}为是否为变音
+            </summary>
+            <param name="file"></param>
+            <param name="magic"></param>
+        </member>
+    </members>
+</doc>

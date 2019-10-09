@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Newbe.Mahua.QQLight</name>
+    </assembly>
+    <members>
+        <member name="M:Newbe.Mahua.QQLight.Messages.Builders.QqLightMessageBuilder.BFace(System.String)">
+            <summary>
+            {1}为该原创表情的ID，存放在酷Q目录的data\bface\下
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:Newbe.Mahua.QQLight.Messages.Builders.QqLightMessageBuilder.Image(System.String)">
+            <summary>
+            {1}为图片文件名称，图片存放在酷Q目录的data\image\下
+            </summary>
+            <param name="file"></param>
+        </member>
+    </members>
+</doc>
