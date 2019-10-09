@@ -2,6 +2,7 @@
 
 ## Requirements:    
   .net 4.5 
+  Newtonsoft.Json.dll
 ## Description:
 为某沙雕群编写的一个自动爬取[p站](https://www.pixiv.net/)上排行榜并同过机器人发送
 
