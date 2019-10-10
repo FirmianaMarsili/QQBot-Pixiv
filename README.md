@@ -1,7 +1,7 @@
 # Pixiv
 
 ## Requirements:    
-  .net 4.5 
+  .net 4.5 <br>
   Newtonsoft.Json.dll
 ## Description:
 为某沙雕群编写的一个自动爬取[p站](https://www.pixiv.net/)上排行榜并同过机器人发送
@@ -61,8 +61,8 @@
 
 # telegra
 ## Requirements:    
-  .net 4.5 
-  Newtonsoft.Json.dll
+  .net 4.5 <br>
+  Newtonsoft.Json.dll<br>
   System.Drawing.dll
  ## Description:
   获取telegram里的[匿名博客](https://telegra.ph)里天音莉莉的系列图集,因其发表人的链接我查找了一下已经失效故不在放出
