@@ -20,12 +20,12 @@ namespace Newbe.Mahua.Plugins.telegra.MahuaEvents
 
         public void ProcessGroupMessage(GroupMessageReceivedContext context)
         {
-            if (context.Message.Contains("嬲"))
+            if (context.Message.Contains("嬲") || context.Message.Contains("kkp"))
             {
-                bool flag = false;
-                TimeSpan time = DateTime.Now - Helper.dateTimeCD;
-                flag = time.TotalSeconds > Helper.timeCD;
-                if (flag)
+                //bool flag = false;
+                //TimeSpan time = DateTime.Now - Helper.dateTimeCD;
+                //flag = time.TotalSeconds > Helper.timeCD;
+                //if (flag)
                 {
                     string imageUrl = Helper.GetPath();
                     if (imageUrl == null)
@@ -36,13 +36,13 @@ namespace Newbe.Mahua.Plugins.telegra.MahuaEvents
                     {
                         Helper.dateTimeCD = DateTime.Now;
                         _mahuaApi.SendGroupMessage(context.FromGroup).Image(imageUrl).At(context.FromQq).Done();
-                        System.GC.Collect();
+                        //System.GC.Collect();
                     }
                 }
-                else
-                {
-                    _mahuaApi.SendGroupMessage(context.FromGroup).Text(string.Format("正在冷却,剩余{0}秒", ((int)(Helper.timeCD - time.TotalSeconds)).ToString())).At(context.FromQq).Done();
-                }
+                //else
+                //{
+                //    _mahuaApi.SendGroupMessage(context.FromGroup).Text(string.Format("正在冷却,剩余{0}秒", ((int)(Helper.timeCD - time.TotalSeconds)).ToString())).At(context.FromQq).Done();
+                //}
             }
         }    
     }

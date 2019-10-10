@@ -252,7 +252,7 @@ namespace Newbe.Mahua.Plugins.telegra.MahuaApis
                         foreach (Match item in str)
                         {
                             string file = path + "\\" + item.ToString().Replace("/file/",null);
-                            
+
                             if (!File.Exists(file))
                             {
                                 WebClient wc = new WebClient();
@@ -260,10 +260,10 @@ namespace Newbe.Mahua.Plugins.telegra.MahuaApis
                                 using (MemoryStream ms = new MemoryStream(b))
                                 {
                                     Image image = Image.FromStream(ms);
-                                    image.Save(file);
-                                    imageUrl.Add("file://" + file);
-                                }                             
-                            }                           
+                                    image.Save(file);                                    
+                                }
+                            }
+                            imageUrl.Add(file);                            
                            
                         }
                         currentIndex++;
