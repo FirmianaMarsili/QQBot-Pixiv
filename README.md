@@ -5,8 +5,9 @@
   Newtonsoft.Json.dll
 ## Description:
 为某沙雕群编写的一个自动爬取[p站](https://www.pixiv.net/)上排行榜并同过机器人发送
-
-**p站api已经失效,有时间会重制**
+<br>
+~~**p站api已经失效,有时间会重制**~~<br>
+**已经修复登录问题,可以正常使用**
 ## References:
 
 [pixiv_API-c-](https://github.com/xingoxu/pixiv_API-c-)  
