@@ -86,9 +86,21 @@ namespace Newbe.Mahua.Plugins.Parrot.MahuaApis
         }
         private async Task<bool> authAsync(Dictionary<string, object> parameters, CancellationTokenSource tokensource = null)
         {
+            string time = DateTime.UtcNow.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
+            string hash = null;
+            using (var md5 = System.Security.Cryptography.MD5.Create())
+            {
+                var array = md5.ComputeHash(Encoding.UTF8.GetBytes((time + "28c1fdd170a5204386cb1313c7077b34f83e4aaf4aa829ce78c231e05b0bae2c").Trim()));
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < array.Length; i++)
+                    sb.Append(array[i].ToString("x2"));
+                hash = sb.ToString();
+            }
             var header = new Dictionary<string, object>
             {
-                { "Referer", "http://www.pixiv.net/" }//header
+                { "Referer", "http://www.pixiv.net/" },//header
+                { "X-Client-Time",time},
+                { "X-Client-Hash", hash}
             };
             var api = "https://oauth.secure.pixiv.net/auth/token";//oauth_url
 
