@@ -13,7 +13,7 @@
 [pixiv_API-c-](https://github.com/xingoxu/pixiv_API-c-)  
 [Newbe.Mahua.Framework](https://github.com/Newbe36524/Newbe.Mahua.Framework)
 
-## Use:
+## Usage:
 阅读文档[开始第一个 QQ 机器人【适用于 v1.9-v1.X】](http://www.newbe.pro/2018/06/10/Newbe.Mahua/Begin-First-Plugin-With-Mahua-In-v1.9/)进行搭建环境,因为是使用通用接口,所以可以直接生成放在各平台去运行,优先推荐cqpPro,其次是mpq,切记不要用cleverqq,我使用框架写个零功能的放进去都线程报错
 
 具体配置在Profile.cs里
@@ -35,7 +35,7 @@
 ## Description:
 获取[百合居](http://otome.me/)月排行榜
 
-## Use:
+## Usage:
 和pixiv一样的规矩<br>不过会记录上次发送到那一页那一个 文件生成在D:/otome/page.txt
 
 
@@ -50,7 +50,7 @@
 ## Description: 
 获取[yande](https://yande.re/post)里自定义搜索的图片
 
-## Use:
+## Usage:
 照旧<br>文件生成在D:/yande下<br>发送的时间会很长,可以考虑下载到本地然后像pixiv一样发送
 
 
@@ -67,7 +67,7 @@
   System.Drawing.dll
  ## Description:
   获取telegram里的[匿名博客](https://telegra.ph)里天音莉莉的系列图集,因其发表人的链接我查找了一下已经失效故不在放出
-  ## Use:
+  ## Usage:
    照旧<br>文件生成在D:/telegra下,因链接需要代理所以无法发送在线图片,会根据期数生成相对应文件夹,并下载图片包存在里面,然后通过本地链接去发送,如果是发送到telegram里可以直接发送链接<br>需要使用代理,否则无法访问<br>因为是在电报知道其中某一期后通过向前推去尝试获取第一期,结果代码短暂的跑到上一年只查到了[第三期](https://telegra.ph/%E6%B6%A9%E5%9B%BEtime-No3-08-29),所以从第三期开始发送<br>**注意:因博主没有按一天一期,有时鸽了,有时高产,所以我偷懒了，用try catch捕捉,只要失败就会从下一天开始,成功就期数加1,请确保自己网络没有问题或者没有其他bug,否则会出现一直从错误的时间开始访问,可以自行更改**
    <br><br><br><br><br>
    
