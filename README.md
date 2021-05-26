@@ -1,4 +1,4 @@
-# Pixiv
+# Pixiv 已无法使用
 
 ## Requirements:    
   .net 4.5 <br>
@@ -74,8 +74,6 @@
 # PS:
 
   心血来潮的产物,代码极烂,基本不考虑重构,大概
-  
-  有什么好的网站可以邮箱804112469@qq.com
   
   基于MIT License
 
