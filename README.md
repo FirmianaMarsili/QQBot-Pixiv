@@ -1,5 +1,5 @@
 # Pixiv 
-# 长时间未进行测试,效果未知
+# 长时间未进行测试,效果未知 可以尝试我的新项目(Mirai)[https://github.com/FirmianaMarsili/QQBot.git]
 
 ## Requirements:    
   .net 4.5 <br>
